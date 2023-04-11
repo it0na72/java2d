@@ -4,21 +4,21 @@
 This is a Java 2D adventure game and also my final bootcamp project. The intention of this game is to demonstrate what I have learned 
 in the bootcamp, plus a couple more I managed to learn on my own. 
 
-Table of contents:
+### Table of contents:
 	- How to Install
 	- How to Play
 	- What I have learned with this project
 	- Future plans 
 	
-How to Install: 
+### How to Install: 
 	- You can find the latest release of the game by downloading the Jar file in this repository. You will need to have Java installed in 
 	your system.
 	
-How to Play:
+### How to Play:
 	- Use WASD to move (W = up, A = left, S = right, D = right) the character and try to finish the game by killing monsters and finding
 	the treasure. There is a couple of easter eggs within the game, so please let me know if you find them! 
 	
-What I have learned with this project:
+### What I have learned with this project:
 	- Create a game loop
 	- Display player character
 	- Display background tiles
@@ -32,7 +32,7 @@ What I have learned with this project:
 	- Create title screen & game state (pause game, game over screen & save/load game)
 
 	
-Future plans:
+### Future plans:
 	- This game is still being updated on a regular basis. I have a lot of other features I would love to include, including different maps,
 	different classes (fighter, mage, archer, etc), different monsters, different songs depending on the monster you're fighting, and even
 	different dimensions, environment interaction (cutting trees with axe), In-game Menu and different maps (map transitions). However, all of these are not my current priority. 
