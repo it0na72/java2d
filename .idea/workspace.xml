@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="java 2d:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/java_2d_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java 2d.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/NPC/oldmandown1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/NPC/oldmandown2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/NPC/oldmanleft1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/NPC/oldmanleft2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/NPC/oldmanright1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/NPC/oldmanright2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/NPC/oldmanup1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/NPC/oldmanup2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/entity/NPC_OldMan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/font/Minecraft.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/font/x12y16pxMaruMonica.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/CollisionChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/EventHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/EventRect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/UI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/UtilityTool.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/keyHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/maps/map001.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/maps/world01.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/maps/worldV2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/monster/MON_GreenSlime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/monster/greenslime_down_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/monster/greenslime_down_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Boots.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Chest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Door.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Heart.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Key.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/objects/boots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/objects/chest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/objects/door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/objects/heart_blank.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/objects/heart_full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/objects/heart_half.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/objects/key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/desktop.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/down1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/down2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/left1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/left2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/right1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/right2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/up1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/player/up2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/sound/BlueBoyAdventure.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/sound/MainTitle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/sound/coin.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/sound/fanfare.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/sound/powerup.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/sound/unlock.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tile/Tile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tile/TileManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/earth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/java 2d.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/road12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/sand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/tree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/walls.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/water13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/NPC/oldmandown1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/NPC/oldmandown2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/NPC/oldmanleft1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/NPC/oldmanleft2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/NPC/oldmanright1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/NPC/oldmanright2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/NPC/oldmanup1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/NPC/oldmanup2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/font/Minecraft.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/font/x12y16pxMaruMonica.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/maps/map001.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/maps/world01.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/maps/worldV2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/monster/greenslime_down_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/monster/greenslime_down_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/boots.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/chest.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/heart_blank.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/heart_full.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/heart_half.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/desktop.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/down1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/down2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/left1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/left2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/right1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/right2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/up1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/player/up2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sound/MainTitle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sound/coin.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sound/fanfare.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sound/powerup.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sound/unlock.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/earth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/java 2d.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/road12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/sand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/tree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/walls.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles/water13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/NPC_OldMan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/CollisionChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/EventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/EventRect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/UtilityTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/keyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/panel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Boots.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Chest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Heart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tile/Tile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tile/TileManager.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints>
+      <file url="jar://$USER_HOME$/.jdks/openjdk-19.0.1/lib/src.zip!/java.desktop/javax/swing/JComponent.java" />
+    </disable_hints>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NPWw1ICLEf4cK2Q2faOTdpHkOh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abikyoukan/IdeaProjects/java 2d&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="entity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\tiles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\out\artifacts\java_2d_jar" />
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\monster" />
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\objects" />
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\font" />
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\NPC" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="" />
+      <created>1679566433376</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679566433376</updated>
+    </task>
+    <servers />
+  </component>
+</project>
