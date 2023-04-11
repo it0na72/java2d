@@ -11,8 +11,8 @@ in the bootcamp, plus a couple more I managed to learn on my own.
 - Future plans 
 	
 ### How to Install: 
-- You can find the latest release of the game by downloading the Jar file in this repository. You will need to have Java installed in 
-your system.
+- You can clone this repo, open this with Intellij and start the game. Alternatively, you can find the latest release of the game by downloading the Jar file in this repository. You will need to have Java installed in 
+your system (TBC).
 	
 ### How to Play:
 - Use WASD to move (W = up, A = left, S = right, D = right) the character and try to finish the game by killing monsters and finding
