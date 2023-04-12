@@ -56,7 +56,7 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 
 > ![Slime monsters](https://user-images.githubusercontent.com/56265972/231303266-6afaf774-7de9-4407-b7a5-0cb1fd536e25.png)
 
-**When damage has been taken, character gets 1 second invincible state**
+**When damage has been taken from the monsters, the character gets 1 second invincible state**
 
 > ![When damage has been taken, character gets 1 second invincible state](https://user-images.githubusercontent.com/56265972/231303318-7884cf0c-b2f1-4dc4-b5da-64674b3fc237.png)
 
