@@ -9,19 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="added attack state to the character and did some house keeping in the code. will add hit detection in the next commit.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/NPC_OldMan.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/NPC_OldMan.class" afterDir="false" />
+    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Added hit detection in this commit. Can finally attack and kill monsters. These monsters need 4 hits to die. Will add death animation in the next commit.">
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Boots.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Chest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Chest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Door.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Heart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Heart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Key.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/keyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/keyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/keyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/keyHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681497732496</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added hit detection in this commit. Can finally attack and kill monsters. These monsters need 4 hits to die. Will add death animation in the next commit.">
+      <created>1681500752842</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681500752842</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +126,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit of my 2D Adventure Game. This is not a complete version." />
     <MESSAGE value="added attack state to the character and did some house keeping in the code. will add hit detection in the next commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="added attack state to the character and did some house keeping in the code. will add hit detection in the next commit." />
+    <MESSAGE value="Added hit detection in this commit. Can finally attack and kill monsters. These monsters need 4 hits to die. Will add death animation in the next commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added hit detection in this commit. Can finally attack and kill monsters. These monsters need 4 hits to die. Will add death animation in the next commit." />
   </component>
 </project>
