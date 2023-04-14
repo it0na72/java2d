@@ -31,6 +31,7 @@ public class Player extends entity
 
         setDefaultValues();
         getPlayerImage();
+        getPlayerAttackImage();
 
     }
 
@@ -48,20 +49,38 @@ public class Player extends entity
     }
     public void getPlayerImage() {
 
-            up1 = setup("res/player/up1");
-            up2 = setup("res/player/up2");
-            down1 = setup("res/player/down1");
-            down2 = setup("res/player/down2");
-            right1 = setup("res/player/right1");
-            right2 = setup("res/player/right2");
-            left1 = setup("res/player/left1");
-            left2 = setup("res/player/left2");
+            up1 = setup("res/player/up1", panel.tileSize, panel.tileSize);
+            up2 = setup("res/player/up2", panel.tileSize, panel.tileSize);
+            down1 = setup("res/player/down1", panel.tileSize, panel.tileSize);
+            down2 = setup("res/player/down2", panel.tileSize, panel.tileSize);
+            right1 = setup("res/player/right1", panel.tileSize, panel.tileSize);
+            right2 = setup("res/player/right2", panel.tileSize, panel.tileSize);
+            left1 = setup("res/player/left1", panel.tileSize, panel.tileSize);
+            left2 = setup("res/player/left2", panel.tileSize, panel.tileSize);
+
+        }
+
+        public void getPlayerAttackImage () {
+
+        attackUp1 = setup("res/player/attack_up_1", panel.tileSize, panel.tileSize*2);
+        attackUp2 = setup("res/player/attack_up_2", panel.tileSize, panel.tileSize*2);
+        attackDown1 = setup("res/player/attack_down_1", panel.tileSize, panel.tileSize*2);
+        attackDown2 = setup("res/player/attack_down_2", panel.tileSize, panel.tileSize*2);
+        attackLeft1 = setup("res/player/attack_left_1", panel.tileSize*2, panel.tileSize*2);
+        attackLeft2 = setup("res/player/attack_left_2", panel.tileSize*2, panel.tileSize*2);
+        attackRight1 = setup("res/player/attack_right_1", panel.tileSize*2, panel.tileSize*2);
+        attackRight2 = setup("res/player/attack_right_2", panel.tileSize*2, panel.tileSize*2);
+
 
         }
 
     public void update() {
 
-        if(keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true) {
+        if (attacking == true) {
+            attacking();
+        }
+
+        else if(keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true || keyH.enterPressed == true) {
 
             if(keyH.upPressed == true) {
                 direction = "up";
@@ -95,10 +114,10 @@ public class Player extends entity
             // check event
             panel.eHandler.checkEvent();
 
-            panel.keyH.enterPressed = false;
+
 
              // if collision is false, player can move
-             if(collisionOn == false) {
+             if(collisionOn == false && keyH.enterPressed == false) {
 
                  switch(direction) {
                      case "up": worldY -= speed;
@@ -111,6 +130,8 @@ public class Player extends entity
                          break;
                  }
              }
+
+            panel.keyH.enterPressed = false;
 
             spriteCounter ++;
             if (spriteCounter > 12) {
@@ -128,29 +149,48 @@ public class Player extends entity
             }
         }
     }
+    public void attacking() {
+        spriteCounter++;
+
+        if(spriteCounter <= 5) {
+            spriteNum = 1;
+        }
+        if (spriteCounter > 5 && spriteCounter <= 25) {
+            spriteNum = 2;
+        }
+        if (spriteCounter > 25) {
+            spriteNum = 1;
+            spriteCounter = 0;
+            attacking = false;
+        }
+    }
     public void pickUpObject(int i) {
         if(i != 999) {
 
         }
     }
 
-    public void interactNPC(int i){
-        if(i != 999) {
+    public void interactNPC(int i)
+    {
 
-            if(panel.keyH.enterPressed == true) {
+        if (panel.keyH.enterPressed == true)
+        {
+            if (i != 999)
+            {
                 panel.gameState = panel.dialogueState;
                 panel.npc[i].speak();
+            } else
+            {
+                attacking = true;
             }
         }
     }
-
     public void contactMonster(int i) {
         if(i != 999) {
             if(invincible == false) {
                 life -= 1;
                 invincible = true;
             }
-
         }
     }
 
@@ -160,51 +200,58 @@ public class Player extends entity
 //        g2.fillRect(x, y, gp.tileSize, gp.tileSize); // was just to test if i could draw a square that moves with input, it worked but dont need anymore
 
         BufferedImage image = null;
+        int tempScreenX = screenX;
+        int tempScreenY = screenY;
 
         switch(direction) {
             case "up":
-                if (spriteNum == 1) {
-                image = up1;
-            }
-                if (spriteNum == 2) {
-                image = up2;
-            }
+                if(attacking == false) {
+                    if (spriteNum == 1) {image = up1;}
+                    if (spriteNum == 2) {image = up2;}
+                } if(attacking == true) {
+                    tempScreenY = screenY - panel.tileSize;
+                    if (spriteNum == 1) {image = attackUp1;}
+                    if (spriteNum == 2) {image = attackUp2;}
+                }
                 break;
             case "down":
-                if (spriteNum == 1)
-                {
-                    image = down1;
-                }
-                if (spriteNum == 2)
-                {
-                    image = down2;
-                }
+                if(attacking == false) {
+                    if (spriteNum == 1) {image = down1;}
+                    if (spriteNum == 2) {image = down2;}
+                } if(attacking == true) {
+                if (spriteNum == 1) {image = attackDown1;}
+                if (spriteNum == 2) {image = attackDown2;}
+            }
                 break;
             case "left":
-                if (spriteNum == 1)
-                {
-                    image = left1;
-                }
-                if (spriteNum == 2) {
-                    image = left2;
-                }
+                if(attacking == false) {
+                    if (spriteNum == 1) {image = left1;}
+                    if (spriteNum == 2) {image = left2;}
+                } if(attacking == true) {
+                    tempScreenX = screenX - panel.tileSize;
+                if (spriteNum == 1) {image = attackLeft1;}
+                if (spriteNum == 2) {image = attackLeft2;}
+            }
                 break;
             case "right":
-                if (spriteNum == 1) {
-                    image = right1;
-                }
-                if (spriteNum == 2) {
-                    image = right2;
-                }
+                if(attacking == false) {
+                    if (spriteNum == 1) {image = right1;}
+                    if (spriteNum == 2) {image = right2;}
+                } if(attacking == true) {
+                if (spriteNum == 1) {image = attackRight1;}
+                if (spriteNum == 2) {image = attackRight2;}
+            }
                 break;
         }
         if(invincible == true) {
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3F)); // this adds a contrast to the character when hes during invincible mode
         }
-        g2.drawImage(image, screenX, screenY, null);
+        g2.drawImage(image, tempScreenX, tempScreenY, null);
 
         // reset the character effect
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1F));
+
+
         // debug test
 //        g2.setFont(new Font("Arial", Font.PLAIN, 26));
 //        g2.setColor(Color.white);

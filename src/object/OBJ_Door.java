@@ -9,7 +9,7 @@ public class OBJ_Door extends entity
         super(panel);
 
         name = "Door";
-        down1 = setup("/objects/door");
+        down1 = setup("/objects/door", panel.tileSize, panel.tileSize);
         collision = true;
     }
 

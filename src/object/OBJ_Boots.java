@@ -7,6 +7,6 @@ public class OBJ_Boots extends entity
         super(panel);
 
         name = "Boots";
-        down1 = setup("/objects/boots");
+        down1 = setup("/objects/boots", panel.tileSize, panel.tileSize);
     }
 }

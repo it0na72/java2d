@@ -7,6 +7,6 @@ public class OBJ_Key extends entity {
         super(panel);
 
         name = "Key";
-        down1 = setup("/objects/key");
+        down1 = setup("/objects/key", panel.tileSize, panel.tileSize);
         }
     }

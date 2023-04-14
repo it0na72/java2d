@@ -8,6 +8,6 @@ public class OBJ_Chest extends entity
             super(panel);
 
             name = "Chest";
-            down1 = setup("/objects/chest");
+            down1 = setup("/objects/chest", panel.tileSize, panel.tileSize);
         }
     }

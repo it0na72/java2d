@@ -1,13 +1,17 @@
 package monster;
 import entity.entity;
+import main.panel;
 
 import java.util.Random;
 
 public class MON_GreenSlime extends entity
 {
+    main.panel panel;
     public MON_GreenSlime(main.panel panel)
     {
         super(panel);
+        this.panel = panel;
+
 
         type = 2;
         name = "Green Slime";
@@ -25,14 +29,14 @@ public class MON_GreenSlime extends entity
         getImage();
     }
     public void getImage () {
-        up1 = setup ("res/monster/greenslime_down_1");
-        up2 = setup ("res/monster/greenslime_down_2");
-        down1 = setup ("res/monster/greenslime_down_1");
-        down2 = setup ("res/monster/greenslime_down_2");
-        left1 = setup ("res/monster/greenslime_down_1");
-        left2 = setup ("res/monster/greenslime_down_2");
-        right1 = setup ("res/monster/greenslime_down_1");
-        right2 = setup ("res/monster/greenslime_down_2");
+        up1 = setup ("res/monster/greenslime_down_1", panel.tileSize, panel.tileSize);
+        up2 = setup ("res/monster/greenslime_down_3", panel.tileSize, panel.tileSize);
+        down1 = setup ("res/monster/greenslime_down_1", panel.tileSize, panel.tileSize);
+        down2 = setup ("res/monster/greenslime_down_3", panel.tileSize, panel.tileSize);
+        left1 = setup ("res/monster/greenslime_down_1", panel.tileSize, panel.tileSize);
+        left2 = setup ("res/monster/greenslime_down_3", panel.tileSize, panel.tileSize);
+        right1 = setup ("res/monster/greenslime_down_1", panel.tileSize, panel.tileSize);
+        right2 = setup ("res/monster/greenslime_down_3", panel.tileSize, panel.tileSize);
     }
     public void setAction()
     {

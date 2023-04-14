@@ -14,14 +14,14 @@ public class NPC_OldMan extends entity {
     }
     public void getImage() {
 
-        up1 = setup("res/NPC/oldmanup1");
-        up2 = setup("res/NPC/oldmanup2");
-        down1 = setup("res/NPC/oldmandown1");
-        down2 = setup("res/NPC/oldmandown2");
-        right1 = setup("res/NPC/oldmanright1");
-        right2 = setup("res/NPC/oldmanright2");
-        left1 = setup("res/NPC/oldmanleft1");
-        left2 = setup("res/NPC/oldmanleft2");
+        up1 = setup("res/NPC/oldmanup1", panel.tileSize, panel.tileSize);
+        up2 = setup("res/NPC/oldmanup2", panel.tileSize, panel.tileSize);
+        down1 = setup("res/NPC/oldmandown1", panel.tileSize, panel.tileSize);
+        down2 = setup("res/NPC/oldmandown2", panel.tileSize, panel.tileSize);
+        right1 = setup("res/NPC/oldmanright1", panel.tileSize, panel.tileSize);
+        right2 = setup("res/NPC/oldmanright2", panel.tileSize, panel.tileSize);
+        left1 = setup("res/NPC/oldmanleft1", panel.tileSize, panel.tileSize);
+        left2 = setup("res/NPC/oldmanleft2", panel.tileSize, panel.tileSize);
 
     }
 

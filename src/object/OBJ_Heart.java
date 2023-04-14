@@ -7,8 +7,8 @@ public class OBJ_Heart extends entity
         super(panel);
 
         name = "Heart";
-        image = setup("res/objects/heart_full");
-        image2 = setup("res/objects/heart_half");
-        image3 = setup("res/objects/heart_blank");
+        image = setup("res/objects/heart_full", panel.tileSize, panel.tileSize);
+        image2 = setup("res/objects/heart_half", panel.tileSize, panel.tileSize);
+        image3 = setup("res/objects/heart_blank", panel.tileSize, panel.tileSize);
     }
 }
