@@ -2,7 +2,7 @@
 
 
 This is a Java 2D adventure game and also my final bootcamp project. The intention of this game is to demonstrate what I have learned 
-in the bootcamp, plus a couple more I managed to learn on my own. 
+in the bootcamp, plus a couple more things I managed to learn on my own. 
 
 ### Table of contents:
 - How to Install
