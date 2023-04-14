@@ -2,6 +2,8 @@ package entity;
 
 import main.keyHandler;
 import main.panel;
+import org.w3c.dom.ls.LSOutput;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.sql.SQLOutput;
@@ -28,6 +30,9 @@ public class Player extends entity
         solidAreaDefaultY = solidArea.y;
         solidArea.width = 13;
         solidArea.height = 20;
+
+        attackArea.width = 36;
+        attackArea.height = 36;
 
         setDefaultValues();
         getPlayerImage();
@@ -57,7 +62,6 @@ public class Player extends entity
             right2 = setup("res/player/right2", panel.tileSize, panel.tileSize);
             left1 = setup("res/player/left1", panel.tileSize, panel.tileSize);
             left2 = setup("res/player/left2", panel.tileSize, panel.tileSize);
-
         }
 
         public void getPlayerAttackImage () {
@@ -70,8 +74,6 @@ public class Player extends entity
         attackLeft2 = setup("res/player/attack_left_2", panel.tileSize*2, panel.tileSize*2);
         attackRight1 = setup("res/player/attack_right_1", panel.tileSize*2, panel.tileSize*2);
         attackRight2 = setup("res/player/attack_right_2", panel.tileSize*2, panel.tileSize*2);
-
-
         }
 
     public void update() {
@@ -157,7 +159,36 @@ public class Player extends entity
         }
         if (spriteCounter > 5 && spriteCounter <= 25) {
             spriteNum = 2;
+
+            // save the current worldX, worldY, solidArea
+            int currentWorldX = worldX;
+            int currentWorldY = worldY;
+            int solidAreaWidth = solidArea.width;
+            int solidAreaHeight = solidArea.height;
+
+            // adjust player's worldX, worldY for the attackArea
+            switch(direction) {
+                case "up": worldY -= attackArea.height; break;
+                case "down": worldY += attackArea.height; break;
+                case "left": worldX -= attackArea.width; break;
+                case "right": worldX += attackArea.height; break;
+            }
+
+            // attackArea becomes solidArea
+            solidArea.width = attackArea.width;
+            solidArea.height = attackArea.height;
+
+            // check monster collision with the updated worldX, worldY and solidArea
+            int monsterIndex = panel.checker.checkEntity(this, panel.monster);
+            damageMonster(monsterIndex);
+
+            // after checking for collisions, restores the original data
+            worldX = currentWorldX;
+            worldY = currentWorldY;
+            solidArea.width = solidAreaWidth;
+            solidArea.height = solidAreaHeight;
         }
+
         if (spriteCounter > 25) {
             spriteNum = 1;
             spriteCounter = 0;
@@ -190,6 +221,19 @@ public class Player extends entity
             if(invincible == false) {
                 life -= 1;
                 invincible = true;
+            }
+        }
+    }
+    public void damageMonster(int i) {
+        if (i != 999 )
+        {
+            if (panel.monster[i].invincible == false) {
+                panel.monster[i].life -= 1;
+                panel.monster[i].invincible = true;
+
+                if (panel.monster[i].life <= 0) {
+                    panel.monster[i] = null;
+                }
             }
         }
     }
