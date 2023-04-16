@@ -2,6 +2,8 @@ package entity;
 
 import main.keyHandler;
 import main.panel;
+import object.OBJ_Shield_Wood;
+import object.OBJ_Sword_Normal;
 import org.w3c.dom.ls.LSOutput;
 
 import java.awt.*;
@@ -11,9 +13,9 @@ import java.sql.SQLOutput;
 public class Player extends entity
 {
     keyHandler keyH;
-
     public final int screenX;
     public final int screenY;
+    public boolean attackCanceled = false;
 
     public Player(panel panel, keyHandler keyH)
     {
@@ -48,9 +50,26 @@ public class Player extends entity
         direction = "down ";
 
         // player status
+        level = 1;
         maxLife = 6;
         life = maxLife;
+        strength = 1; // the more strength the character has, the more damage he gives (duh)
+        dexterity = 1; // the more dexterity the character has, the less damage he receives, due to evading all the attacks
+        exp = 0;
+        nextLevelExp = 5;
+        coin = 0;
+        currentWeapon = new OBJ_Sword_Normal(panel);
+        currentShield = new OBJ_Shield_Wood(panel);
+        attack = getAttack(); // the total attack value is decided by strength and the weapon hes using
+        defense = getDefense(); // the total defense value is decided by the dexterity and shield
 
+
+    }
+    public int getAttack() {
+        return attack = strength * currentWeapon.attackValue;
+    }
+    public int getDefense() {
+        return defense = dexterity * currentShield.defenseValue;
     }
     public void getPlayerImage() {
 
@@ -122,16 +141,20 @@ public class Player extends entity
              if(collisionOn == false && keyH.enterPressed == false) {
 
                  switch(direction) {
-                     case "up": worldY -= speed;
-                         break;
-                     case "down": worldY += speed;
-                         break;
-                     case "left": worldX -= speed;
-                         break;
-                     case "right": worldX += speed;
-                         break;
+                     case "up": worldY -= speed; break;
+                     case "down": worldY += speed; break;
+                     case "left": worldX -= speed; break;
+                     case "right": worldX += speed; break;
                  }
              }
+
+             if(keyH.enterPressed == true && attackCanceled == false) {
+                 attacking = true;
+                 spriteCounter = 0;
+
+             }
+
+             attackCanceled = false;
 
             panel.keyH.enterPressed = false;
 
@@ -208,12 +231,9 @@ public class Player extends entity
         {
             if (i != 999)
             {
+                attackCanceled = true;
                 panel.gameState = panel.dialogueState;
                 panel.npc[i].speak();
-            } else
-            {
-
-                attacking = true;
             }
         }
     }
@@ -236,7 +256,6 @@ public class Player extends entity
                 panel.monster[i].damageReaction();
 
                 if (panel.monster[i].life <= 0) {
-                    panel.monster[i] = null;
                     panel.monster[i].dying = true;
                 }
             }

@@ -74,6 +74,7 @@ public class EventHandler
     }
     public void damagePit(int col, int row, int gameState) {
         panel.gameState = gameState;
+        panel.playSE(6);
         panel.ui.currentDialogue = "You fell into a pit!";
         panel.player.life -= 1;
 //        eventRect[col][row].eventDone = true;
@@ -82,6 +83,8 @@ public class EventHandler
     public void healingPool (int col, int row, int gameState) {
         if (panel.keyH.enterPressed == true) {
             panel.gameState = gameState;
+            panel.player.attackCanceled = true;
+            panel.playSE(2);
             panel.ui.currentDialogue = "You drank some water. \nYou feel regenerated and you got some \nhealth back.";
             panel.player.life += 1;
 

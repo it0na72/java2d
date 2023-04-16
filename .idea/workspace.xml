@@ -9,21 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Added hit detection in this commit. Can finally attack and kill monsters. These monsters need 4 hits to die. Will add death animation in the next commit.">
-      <change afterPath="$PROJECT_DIR$/res/sound/hitmonster.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sound/receivedamage.wav" afterDir="false" />
+    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Added death animation in this commit by adding a small flashing effect when the monsters die. Also added a function that make monsters get away from the player when they get attacked. However, there's a small bug currently that the game crashes when a monster is killed. Will fix this in the next commit.">
+      <change afterPath="$PROJECT_DIR$/res/objects/shield_wood.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/sword_normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Shield_Wood.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Sword_Normal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/EventHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/monster/MON_GreenSlime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/monster/MON_GreenSlime.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/keyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/keyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,18 +64,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/abikyoukan/IdeaProjects/java 2d&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/abikyoukan/IdeaProjects/java 2d",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.editor"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="entity" />
@@ -80,11 +84,11 @@
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\tiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\objects" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\sound" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\player" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\out\artifacts\java_2d_jar" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\monster" />
-      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\objects" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -134,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681513986581</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added death animation in this commit by adding a small flashing effect when the monsters die. Also added a function that make monsters get away from the player when they get attacked. However, there's a small bug currently that the game crashes when a monster is killed. Will fix this in the next commit.">
+      <created>1681682894794</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681682894794</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,7 +163,8 @@
     <MESSAGE value="First commit of my 2D Adventure Game. This is not a complete version." />
     <MESSAGE value="added attack state to the character and did some house keeping in the code. will add hit detection in the next commit." />
     <MESSAGE value="Added hit detection in this commit. Can finally attack and kill monsters. These monsters need 4 hits to die. Will add death animation in the next commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added hit detection in this commit. Can finally attack and kill monsters. These monsters need 4 hits to die. Will add death animation in the next commit." />
+    <MESSAGE value="Added death animation in this commit by adding a small flashing effect when the monsters die. Also added a function that make monsters get away from the player when they get attacked. However, there's a small bug currently that the game crashes when a monster is killed. Will fix this in the next commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added death animation in this commit by adding a small flashing effect when the monsters die. Also added a function that make monsters get away from the player when they get attacked. However, there's a small bug currently that the game crashes when a monster is killed. Will fix this in the next commit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -47,6 +47,20 @@ public class entity
     public int speed;
     public int maxLife;
     public int life;
+    public int level;
+    public int strength;
+    public int dexterity;
+    public int attack;
+    public int defense;
+    public int exp;
+    public int nextLevelExp;
+    public int coin;
+    public entity currentWeapon;
+    public entity currentShield;
+
+    // item attributes
+    public int attackValue;
+    public int defenseValue;
 
     public entity(main.panel panel) {
         this.panel = panel;
@@ -141,14 +155,14 @@ public class entity
                 double hpBarValue = oneScale*life;
 
                 g2.setColor(new Color(35, 35, 35));
-                g2.fillRect(screenX - 1, screenY - 16, panel.tileSize + 2, 12);
+                g2.fillRect(screenX - 1, screenY - 16, panel.tileSize + 2, 12); // outline of the health bar
 
                 g2.setColor(new Color(255, 0, 30));
                 g2.fillRect(screenX, screenY - 15, (int)hpBarValue, 10);
 
                 hpBarCounter++;
 
-                if(hpBarCounter > 600) {
+                if(hpBarCounter > 600) {    // 10 seconds until the health bar disappears
                     hpBarCounter = 0;
                     hpBarOn = false;
                 }
