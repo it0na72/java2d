@@ -16,6 +16,8 @@ public class Sound
         soundURL[2] = getClass().getResource("res/sound/powerup.wav");
         soundURL[3] = getClass().getResource("res/sound/unlock.wav");
         soundURL[4] = getClass().getResource("res/sound/fanfare.wav");
+        soundURL[5] = getClass().getResource("res/sound/hitmonster.wav");
+        soundURL[6] = getClass().getResource("res/sound/receivedamage.wav");
     }
 
     public void setFile(int i) {
@@ -29,12 +31,17 @@ public class Sound
         }
     }
     public void play() {
+        if (clip != null) {
         clip.start();
+    }
     }
     public void loop() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
     public void stop () {
-        clip.stop();
+        if (clip != null) {
+            clip.stop();
+        }
     }
 }
+

@@ -212,6 +212,7 @@ public class Player extends entity
                 panel.npc[i].speak();
             } else
             {
+
                 attacking = true;
             }
         }
@@ -219,6 +220,7 @@ public class Player extends entity
     public void contactMonster(int i) {
         if(i != 999) {
             if(invincible == false) {
+                panel.playSE(6);
                 life -= 1;
                 invincible = true;
             }
@@ -228,11 +230,14 @@ public class Player extends entity
         if (i != 999 )
         {
             if (panel.monster[i].invincible == false) {
+                panel.playSE(5);
                 panel.monster[i].life -= 1;
                 panel.monster[i].invincible = true;
+                panel.monster[i].damageReaction();
 
                 if (panel.monster[i].life <= 0) {
                     panel.monster[i] = null;
+                    panel.monster[i].dying = true;
                 }
             }
         }

@@ -67,4 +67,8 @@ public class MON_GreenSlime extends entity
             actionLockCounter = 0;
         }
     }
+    public void damageReaction() {
+        actionLockCounter = 0;
+        direction = panel.player.direction;
+    }
 }

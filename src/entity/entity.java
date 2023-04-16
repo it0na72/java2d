@@ -29,11 +29,17 @@ public class entity
     public boolean collisionOn = false;
     public boolean invincible = false;
     boolean attacking = false;
+    public boolean alive = true;
+    public boolean dying = false;
+    boolean hpBarOn = false;
+
 
     // counter
     public int spriteCounter = 0;
     public int actionLockCounter = 0;
     public int invincibleCounter = 0;
+    public int dyingCounter = 0;
+    int hpBarCounter = 0;
 
     // character attributes, status
     public int type; // 0 = player, 1 = npc, 2 = monster
@@ -48,6 +54,7 @@ public class entity
     }
 
     public void setAction() {}
+    public void damageReaction() {}
     public void speak() {}
     public void update() {
 
@@ -63,6 +70,7 @@ public class entity
         if(this.type == 2 && contactPlayer == true) {
             if(panel.player.invincible == false) {
                 // player can take damage
+                panel.playSE(6);
                 panel.player.life -= 1;
                 panel.player.invincible = true;
             }
@@ -127,14 +135,61 @@ public class entity
                     break;
             }
 
+            // monster hp bar
+            if(type == 2 && hpBarOn == true) {
+                double oneScale = (double)panel.tileSize/maxLife;
+                double hpBarValue = oneScale*life;
+
+                g2.setColor(new Color(35, 35, 35));
+                g2.fillRect(screenX - 1, screenY - 16, panel.tileSize + 2, 12);
+
+                g2.setColor(new Color(255, 0, 30));
+                g2.fillRect(screenX, screenY - 15, (int)hpBarValue, 10);
+
+                hpBarCounter++;
+
+                if(hpBarCounter > 600) {
+                    hpBarCounter = 0;
+                    hpBarOn = false;
+                }
+            }
+
+
             if(invincible == true) {
-                g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.4F)); // this adds a contrast to the character when hes during invincible mode
+                hpBarOn = true;
+                hpBarCounter = 0;
+                changeAlpha(g2, 0.4F); // this adds a contrast to the character when hes during invincible mode
+            }
+            if(dying == true) {
+                dyingAnimation(g2);
             }
 
             g2.drawImage(image, screenX, screenY, panel.tileSize, panel.tileSize, null);
 
-            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1F));
+            changeAlpha(g2, 1F);
         }
+    }
+    public void dyingAnimation(Graphics2D g2) {
+
+        dyingCounter++;
+
+        int i = 5; // added this so I dont have to change every value manually
+
+        if (dyingCounter <= i) {changeAlpha(g2, 0F);}
+        if (dyingCounter > i && dyingCounter <= i*2) {changeAlpha(g2, 1F);}
+        if (dyingCounter > i*2 && dyingCounter <= i*3) {changeAlpha(g2, 0F);}
+        if (dyingCounter > i*3 && dyingCounter <= i*4) {changeAlpha(g2, 1F);}
+        if (dyingCounter > i*4 && dyingCounter <= i*5) {changeAlpha(g2, 0F);}
+        if (dyingCounter > i*5 && dyingCounter <= i*6) {changeAlpha(g2, 1F);}
+        if (dyingCounter > i*6 && dyingCounter <= i*7) {changeAlpha(g2, 0F);}
+        if (dyingCounter > i*7 && dyingCounter <= i*8) {changeAlpha(g2, 1F);}
+        if(dyingCounter > i*8) {
+            dying = false;
+            alive = false;
+        }
+    }
+    public void changeAlpha(Graphics2D g2, float alphaValue) {
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alphaValue));
     }
     public BufferedImage setup(String imagePath, int width, int height) {
 

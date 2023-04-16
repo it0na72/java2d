@@ -34,7 +34,7 @@ public class panel extends JPanel implements Runnable
     TileManager tileM = new TileManager(this);
     public keyHandler keyH = new keyHandler(this);
     Sound music = new Sound();
-    Sound se = new Sound();
+    Sound SE = new Sound();
     public CollisionChecker checker = new CollisionChecker(this);
     public AssetSetter aSetter  = new AssetSetter(this);
     public UI ui = new UI(this);
@@ -125,7 +125,12 @@ public class panel extends JPanel implements Runnable
             }
             for (int i = 0; i < monster.length; i++) {
                 if(monster[i] != null) {
+                    if(monster[i].alive == true && monster[i].dying == false) {
                     monster[i].update();
+                }
+                    if(monster[i].alive == false) {
+                        monster[i] = null;
+                    }
                 }
             }
         }
@@ -138,11 +143,12 @@ public class panel extends JPanel implements Runnable
     public void paintComponent(Graphics g){
 
         super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D)g;
+        Graphics2D g2 = (Graphics2D) g;
 
         // debug
         long drawStart = 0;
-        if(keyH.checkDrawTime == true) {
+        if (keyH.checkDrawTime == true)
+        {
             drawStart = System.nanoTime();
         }
 
@@ -222,7 +228,7 @@ public class panel extends JPanel implements Runnable
         music.stop();
     }
     public void playSE(int i) {
-        se.setFile(i);
-        se.play();
+        SE.setFile(i);
+        SE.play();
     }
 }
