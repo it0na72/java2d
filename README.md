@@ -54,11 +54,17 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 
 **Slime monsters**
 
-> ![Slime monsters](https://user-images.githubusercontent.com/56265972/231303266-6afaf774-7de9-4407-b7a5-0cb1fd536e25.png)
+> ![Slime monsters](https://user-images.githubusercontent.com/56265972/232582111-5957679d-df29-4db7-a621-8c31650f11b7.png)
 
 **When damage has been taken from the monsters, the character gets 1 second invincible state**
 
-> ![When damage has been taken, character gets 1 second invincible state](https://user-images.githubusercontent.com/56265972/231303318-7884cf0c-b2f1-4dc4-b5da-64674b3fc237.png)
+> ![When damage has been taken, character gets 1 second invincible state](https://user-images.githubusercontent.com/56265972/232582266-3d0006f8-a3c1-4737-afce-c5080a838a1b.png)
+
+**Stats menu**
+
+> ![](https://user-images.githubusercontent.com/56265972/232582401-d56250c5-be2b-490b-819f-a15241e468e8.png)
+
+
 
 **Traps across the map**
 
