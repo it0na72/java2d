@@ -9,11 +9,11 @@ in the bootcamp, plus a couple more things I managed to learn on my own.
 - How to Play
 - What I have learned with this project
 - Future plans 
+- Current bugs
 - Screenshots of the game
 	
 ### How to Install: 
-- You can clone this repo, open this with Intellij and start the game. Alternatively, you can find the latest release of the game by downloading the Jar file in this repository. You will need to have Java installed in 
-your system (TBC).
+- You can clone this repo, open this with Intellij and start the game. Alternatively, you can find the latest release of the game by downloading the Jar file in this repository. You will need to have Java installed in your system (TBC).
 	
 ### How to Play:
 - Use WASD to move (W = up, A = left, S = right, D = right) the character and try to finish the game by killing monsters and finding
@@ -37,6 +37,11 @@ the treasure. There is a couple of easter eggs within the game, so please let me
 different classes (fighter, mage, archer, etc), different monsters, different songs depending on the monster you're fighting, and even
 different dimensions, environment interaction (cutting trees with axe), In-game Menu and different maps (map transitions). However, all of these are not my current priority. 
 
+### Current bugs (TBC):
+- [ ] There is no sound effects or music in the game yet. I added all the sound files but they are still not working. Will try to fix this as soon as possible
+- [ ] Healing fountain location is slightly bugged. You need to be in the EXACT tile for it to work
+- [ ] If you spam the healing fountain, you will get more health than you currently have (eg: if you have maximum health and you use the healing fountain, you get 3 extra hearts on top of that)
+- [ ] Attack animation is slightly out of focus
 
 ### Screenshots of the game:
 
@@ -54,11 +59,17 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 
 **Slime monsters**
 
-> ![Slime monsters](https://user-images.githubusercontent.com/56265972/231303266-6afaf774-7de9-4407-b7a5-0cb1fd536e25.png)
+> ![Slime monsters](https://user-images.githubusercontent.com/56265972/232582111-5957679d-df29-4db7-a621-8c31650f11b7.png)
 
 **When damage has been taken from the monsters, the character gets 1 second invincible state**
 
-> ![When damage has been taken, character gets 1 second invincible state](https://user-images.githubusercontent.com/56265972/231303318-7884cf0c-b2f1-4dc4-b5da-64674b3fc237.png)
+> ![When damage has been taken, character gets 1 second invincible state](https://user-images.githubusercontent.com/56265972/232582266-3d0006f8-a3c1-4737-afce-c5080a838a1b.png)
+
+**Stats menu**
+
+> ![](https://user-images.githubusercontent.com/56265972/232582401-d56250c5-be2b-490b-819f-a15241e468e8.png)
+
+
 
 **Traps across the map**
 
