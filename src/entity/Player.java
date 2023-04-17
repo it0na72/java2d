@@ -2,6 +2,7 @@ package entity;
 
 import main.keyHandler;
 import main.panel;
+import object.OBJ_Key;
 import object.OBJ_Shield_Wood;
 import object.OBJ_Sword_Normal;
 import org.w3c.dom.ls.LSOutput;
@@ -9,6 +10,7 @@ import org.w3c.dom.ls.LSOutput;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 
 public class Player extends entity
 {
@@ -16,6 +18,8 @@ public class Player extends entity
     public final int screenX;
     public final int screenY;
     public boolean attackCanceled = false;
+    public ArrayList<entity> inventory = new ArrayList<>();
+    public final int maxInventorySize = 20;
 
     public Player(panel panel, keyHandler keyH)
     {
@@ -39,6 +43,7 @@ public class Player extends entity
         setDefaultValues();
         getPlayerImage();
         getPlayerAttackImage();
+        setItems();
 
     }
 
@@ -63,6 +68,12 @@ public class Player extends entity
         attack = getAttack(); // the total attack value is decided by strength and the weapon hes using
         defense = getDefense(); // the total defense value is decided by the dexterity and shield
 
+
+    }
+    public void setItems() {
+        inventory.add(currentWeapon);
+        inventory.add(currentShield);
+        inventory.add(new OBJ_Key(panel));
 
     }
     public int getAttack() {
@@ -221,6 +232,18 @@ public class Player extends entity
     public void pickUpObject(int i) {
         if(i != 999) {
 
+            String text;
+
+            if (inventory.size() != maxInventorySize) {
+                inventory.add(panel.obj[i]);
+                panel.playSE(1);
+                text = "You got a " + panel.obj[i].name + "!";
+            }
+            else {
+                text = "Your inventory is full!";
+            }
+            panel.ui.addMessage(text);
+            panel.obj[i] = null;
         }
     }
 
@@ -241,7 +264,12 @@ public class Player extends entity
         if(i != 999) {
             if(invincible == false) {
                 panel.playSE(6);
-                life -= 1;
+
+                int damage = panel.monster[i].attack - defense;
+                if (damage < 0) {
+                    damage = 0;
+                }
+                life -= damage;
                 invincible = true;
             }
         }
@@ -251,17 +279,45 @@ public class Player extends entity
         {
             if (panel.monster[i].invincible == false) {
                 panel.playSE(5);
-                panel.monster[i].life -= 1;
+
+                int damage = attack - panel.monster[i].defense;
+                if (damage < 0) {
+                    damage = 0;
+                }
+
+                panel.monster[i].life -= damage;
+                panel.ui.addMessage(damage + " " + "damage!");
+
                 panel.monster[i].invincible = true;
                 panel.monster[i].damageReaction();
 
                 if (panel.monster[i].life <= 0) {
                     panel.monster[i].dying = true;
+                    panel.ui.addMessage("Killed the " + panel.monster[i].name + "!" );
+                    panel.ui.addMessage("Exp gained: " + panel.monster[i].exp + "!" );
+                    exp += panel.monster[i].exp;
+                    checkLevelUp();
                 }
             }
         }
     }
 
+    public void checkLevelUp() {
+        if(exp >= nextLevelExp) {
+            level ++;
+            exp = exp - nextLevelExp;
+            nextLevelExp = nextLevelExp*2;  // This refreshes the experience but also takes into consideration any exp gained that exceeds the nextLevelExp. For example, slimes give you 2exp and you need to kill 3 slimes to level up (that's 6exp despite only requiring 5 to level up). This will cause the exp to reset but the excess exp to be saved when you level up (this should make the game more balanced and prevent the player from levelling up too rapidly).
+            maxLife += 2;
+            strength ++;
+            dexterity ++;
+            attack = getAttack();
+            defense = getDefense();
+
+            panel.playSE(8);
+            panel.gameState = panel.dialogueState;
+            panel.ui.currentDialogue = "You are level: " + level + "! " + "Congratulations!";
+        }
+    }
     public void draw(Graphics2D g2) {
 
 //        g2.setColor(Color.white);

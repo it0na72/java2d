@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class UI
 {
@@ -13,12 +14,13 @@ public class UI
     Font minecraft, maruMonica;
     BufferedImage heart_full, heart_half, heart_blank;
     public boolean messageOn = false;
-    public String message = "";
-    int messageCounter = 0;
+    ArrayList<String> message = new ArrayList<>();
+    ArrayList<Integer> messageCounter = new ArrayList<>();
     public boolean gameFinished = false;
     public String currentDialogue = "";
     public int commandNum = 0;
-
+    public int slotCol = 0;
+    public int slotRow = 0;
 
 
     public UI(panel panel) {
@@ -44,9 +46,10 @@ public class UI
 
     }
 
-    public void showMessage(String text) {
-        message = text;
-        messageOn = true;
+    public void addMessage(String text) {
+
+        message.add(text);
+        messageCounter.add(0);
     }
     public void draw (Graphics2D g2) {
 
@@ -64,6 +67,7 @@ public class UI
         if(panel.gameState == panel.playState)
         {
             drawPlayerLife();
+            drawMessage();
         }
 
         // pause state
@@ -81,6 +85,7 @@ public class UI
         // character state
         if(panel.gameState == panel.characterState) {
             drawCharacterScreen();
+            drawInventory();
         }
     }
     public void drawPlayerLife() {
@@ -109,6 +114,30 @@ public class UI
             }
             i++;
             x += panel.tileSize;
+        }
+    }
+    public void drawMessage() {
+        int messageX = panel.tileSize;
+        int messageY = panel.tileSize*4;
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 32));
+
+        for(int i = 0; i < message.size(); i++) {
+            if (message.get(i) != null) {
+
+                g2.setColor(Color.black);
+                g2.drawString(message.get(i), messageX+2, messageY+2);
+                g2.setColor(Color.white);
+                g2.drawString(message.get(i), messageX, messageY);
+
+                int counter = messageCounter.get(i) + 1; // message counter ++
+                messageCounter.set(i, counter); // set the counter to the array
+                messageY += 50;
+
+                if(messageCounter.get(i) > 180) {   // 180 = 3 seconds
+                    message.remove(i);
+                    messageCounter.remove(i);
+                }
+            }
         }
     }
     public void drawTitleScreen() {
@@ -283,6 +312,74 @@ public class UI
         g2.drawImage(panel.player.currentWeapon.down1, tailX - panel.tileSize, textY - 15, null);
         textY += panel.tileSize;
         g2.drawImage(panel.player.currentShield.down1, tailX - panel.tileSize, textY - 15, null);
+    }
+    public void drawInventory() {
+
+        // frame
+        int frameX = panel.tileSize*9;
+        int frameY = panel.tileSize;
+        int frameWidth = panel.tileSize*6;
+        int frameHeight = panel.tileSize*5;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+        // slot
+        final int slotXstart = frameX + 20;
+        final int slotYstart = frameY + 20;
+        int slotX = slotXstart;
+        int slotY = slotYstart;
+        int slotSize = panel.tileSize + 3;
+
+        // draw player's items
+        for (int i = 0; i < panel.player.inventory.size(); i++) {
+            g2.drawImage(panel.player.inventory.get(i).down1, slotX, slotY, null);
+
+            slotX += slotSize;
+
+            if(i == 4 || i ==  9 || i == 14) {
+                slotX = slotXstart;
+                slotY += slotSize;
+            }
+        }
+
+        // inventory cursor
+        int cursorX = slotXstart + (slotSize * slotCol);
+        int cursorY = slotYstart + (slotSize * slotRow) ;
+        int cursorWidth = panel.tileSize;
+        int cursorHeight = panel.tileSize;
+
+        // draw cursor
+        g2.setColor(Color.white);
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 10, 10);
+
+        // item description box
+        int dFrameX = frameX;
+        int dFrameY = frameY + frameHeight;
+        int dFrameWidth = frameWidth;
+        int dFrameHeight = panel.tileSize*3;
+
+        // description text
+        int textX = dFrameX + 20;
+        int textY = dFrameY + panel.tileSize;
+        g2.setFont(g2.getFont().deriveFont(28F));
+
+        int itemIndex = getItemIndexOnSlot();
+
+        if(itemIndex < panel.player.inventory.size()) {
+
+            drawSubWindow(dFrameX, dFrameY, dFrameWidth, dFrameHeight);
+
+            for(String line: panel.player.inventory.get(itemIndex).description.split("\n")) {
+                g2.drawString(line, textX, textY);
+                textY += 32;
+            }
+        }
+
+
+    }
+    public int getItemIndexOnSlot () {
+        int itemIndex = slotCol + (slotRow*5);
+        return itemIndex;
     }
     public void drawSubWindow(int x, int y, int width, int height) {
 

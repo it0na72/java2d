@@ -86,7 +86,8 @@ public class EventHandler
             panel.player.attackCanceled = true;
             panel.playSE(2);
             panel.ui.currentDialogue = "You drank some water. \nYou feel regenerated and you got some \nhealth back.";
-            panel.player.life += 1;
+            panel.player.life += panel.player.maxLife;
+            panel.aSetter.setMonster();
 
         }
     }

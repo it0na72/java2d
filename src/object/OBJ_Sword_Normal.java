@@ -10,5 +10,6 @@ public class OBJ_Sword_Normal extends entity
         name = "Normal Sword";
         down1 = setup("res/objects/sword_normal", panel.tileSize, panel.tileSize);
         attackValue = 1;
+        description = "[" + name + "]\nAn old sword passed \ndown for generations.";
     }
 }

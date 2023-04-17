@@ -33,7 +33,7 @@ public class panel extends JPanel implements Runnable
 
     TileManager tileM = new TileManager(this);
     public keyHandler keyH = new keyHandler(this);
-    Sound music = new Sound();
+    Sound sound = new Sound();
     Sound SE = new Sound();
     public CollisionChecker checker = new CollisionChecker(this);
     public AssetSetter aSetter  = new AssetSetter(this);
@@ -70,7 +70,7 @@ public class panel extends JPanel implements Runnable
         aSetter.setObject();
         aSetter.setNPC();
         aSetter.setMonster();
-        //playMusic(0);
+//        playMusic(0);
         gameState = titleState;
     }
 
@@ -221,15 +221,15 @@ public class panel extends JPanel implements Runnable
     }
 
     public void playMusic(int i) {
-        music.setFile(i);
-        music.play();
-        music.loop();
+        sound.setFile(i);
+        sound.play();
+        sound.loop();
     }
     public void stopMusic() {
-        music.stop();
+        sound.stop();
     }
     public void playSE(int i) {
-        SE.setFile(i);
-        SE.play();
+        sound.setFile(i);
+        sound.play();
     }
 }

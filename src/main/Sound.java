@@ -10,13 +10,15 @@ public class Sound
     URL soundURL[] = new URL[30];
 
     public Sound() {
-        soundURL[0] = getClass().getResource("/sound/MainTitle.wav");
-        soundURL[1] = getClass().getResource("/sound/coin.wav");
-        soundURL[2] = getClass().getResource("/sound/powerup.wav");
-        soundURL[3] = getClass().getResource("/sound/unlock.wav");
-        soundURL[4] = getClass().getResource("/sound/fanfare.wav");
-        soundURL[5] = getClass().getResource("/sound/hitmonster.wav");
-        soundURL[6] = getClass().getResource("/sound/receivedamage.wav");
+        soundURL[0] = getClass().getResource("res/sound/MainTitle.wav");
+        soundURL[1] = getClass().getResource("res/sound/coin.wav");
+        soundURL[2] = getClass().getResource("res/sound/powerup.wav");
+        soundURL[3] = getClass().getResource("res/sound/unlock.wav");
+        soundURL[4] = getClass().getResource("res/sound/fanfare.wav");
+        soundURL[5] = getClass().getResource("res/sound/hitmonster.wav");
+        soundURL[6] = getClass().getResource("res/sound/receivedamage.wav");
+        soundURL[7] = getClass().getResource("res/sound/levelup.wav");
+        soundURL[8] = getClass().getResource("res/sound/cursor.wav");
     }
 
     public void setFile(int i) {
@@ -31,7 +33,7 @@ public class Sound
     }
     public void play() {
         if(clip != null) {
-            clip.start();
+            clip.start();  // cant play music for some reason...//
         }
     }
     public void loop() {
@@ -39,7 +41,7 @@ public class Sound
     }
     public void stop () {
         if(clip != null) {
-        clip.stop();
+            clip.stop();
         }
     }
 }

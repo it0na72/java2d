@@ -9,5 +9,6 @@ public class OBJ_Shield_Wood extends entity
         name = "Wood Shield";
         down1 = setup("res/objects/shield_wood", panel.tileSize, panel.tileSize);
         defenseValue = 1;
+        description = "[" + name + "]\nA simple wooden shield.";
     }
 }

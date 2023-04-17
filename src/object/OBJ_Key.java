@@ -7,6 +7,7 @@ public class OBJ_Key extends entity {
         super(panel);
 
         name = "Key";
-        down1 = setup("/objects/key", panel.tileSize, panel.tileSize);
+        down1 = setup("res/objects/key", panel.tileSize, panel.tileSize);
+        description = "[" + name + "]\nThis might open \nsomething.";
         }
     }

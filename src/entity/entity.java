@@ -61,6 +61,7 @@ public class entity
     // item attributes
     public int attackValue;
     public int defenseValue;
+    public String description = "";
 
     public entity(main.panel panel) {
         this.panel = panel;
@@ -85,7 +86,11 @@ public class entity
             if(panel.player.invincible == false) {
                 // player can take damage
                 panel.playSE(6);
-                panel.player.life -= 1;
+                int damage = attack - panel.player.defense;
+                if (damage < 0) {
+                    damage = 0;
+                }
+                panel.player.life -= damage;
                 panel.player.invincible = true;
             }
         }
