@@ -9,30 +9,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Added stats window when pressing the &quot;C&quot; key. This will display a window with different stats like strength, health, exp and others. This is just a visual window for now but in the next commit will implement a window that updates with the player actions.">
-      <change afterPath="$PROJECT_DIR$/res/sound/cursor.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sound/levelup.wav" afterDir="false" />
+    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Stats window now gets updated without having to change the code. Also added an inventory window with a description box below. Sound still doesn't work.">
+      <change afterPath="$PROJECT_DIR$/res/objects/axe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/potion_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/objects/shield_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Axe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Potion_Red.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Shield_Blue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/EventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/UI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/keyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/keyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/monster/MON_GreenSlime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/monster/MON_GreenSlime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Key.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Shield_Wood.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Shield_Wood.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Sword_Normal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Sword_Normal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/tiles/grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/grass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/tiles/tree.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/tiles/tree.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles/grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/tiles/grass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles/tree.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/tiles/tree.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/keyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/keyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/OBJ_Shield_Wood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Shield_Wood.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/OBJ_Sword_Normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Sword_Normal.java" afterDir="false" />
     </list>
@@ -71,31 +74,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/abikyoukan/IdeaProjects/java 2d&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/abikyoukan/IdeaProjects/java 2d/res/objects",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\objects" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\tiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\sound" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\objects" />
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\tiles" />
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\sound" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\player" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\out\artifacts\java_2d_jar" />
-      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\monster" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -159,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681689125992</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Stats window now gets updated without having to change the code. Also added an inventory window with a description box below. Sound still doesn't work.">
+      <created>1681771912445</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681771912445</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,17 +190,7 @@
     <MESSAGE value="Added hit detection in this commit. Can finally attack and kill monsters. These monsters need 4 hits to die. Will add death animation in the next commit." />
     <MESSAGE value="Added death animation in this commit by adding a small flashing effect when the monsters die. Also added a function that make monsters get away from the player when they get attacked. However, there's a small bug currently that the game crashes when a monster is killed. Will fix this in the next commit." />
     <MESSAGE value="Added stats window when pressing the &quot;C&quot; key. This will display a window with different stats like strength, health, exp and others. This is just a visual window for now but in the next commit will implement a window that updates with the player actions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added stats window when pressing the &quot;C&quot; key. This will display a window with different stats like strength, health, exp and others. This is just a visual window for now but in the next commit will implement a window that updates with the player actions." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Stats window now gets updated without having to change the code. Also added an inventory window with a description box below. Sound still doesn't work." />
+    <option name="LAST_COMMIT_MESSAGE" value="Stats window now gets updated without having to change the code. Also added an inventory window with a description box below. Sound still doesn't work." />
   </component>
 </project>

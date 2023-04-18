@@ -42,7 +42,6 @@ public class entity
     int hpBarCounter = 0;
 
     // character attributes, status
-    public int type; // 0 = player, 1 = npc, 2 = monster
     public String name;
     public int speed;
     public int maxLife;
@@ -63,6 +62,16 @@ public class entity
     public int defenseValue;
     public String description = "";
 
+    // type
+    public int type; // 0 = player, 1 = npc, 2 = monster
+    public final int type_player = 0;
+    public final int type_npc = 1;
+    public final int type_monster = 2;
+    public final int type_sword = 3;
+    public final int type_axe = 4;
+    public final int type_shield = 5;
+    public final int type_consumable = 6;
+
     public entity(main.panel panel) {
         this.panel = panel;
 
@@ -70,7 +79,10 @@ public class entity
 
     public void setAction() {}
     public void damageReaction() {}
-    public void speak() {}
+    public void speak() {
+
+    }
+    public void use(entity entity) {}
     public void update() {
 
         setAction();
@@ -82,7 +94,7 @@ public class entity
         panel.checker.checkEntity(this, panel.monster);
         boolean contactPlayer = panel.checker.checkPlayer(this);
 
-        if(this.type == 2 && contactPlayer == true) {
+        if(this.type == type_monster && contactPlayer == true) {
             if(panel.player.invincible == false) {
                 // player can take damage
                 panel.playSE(6);

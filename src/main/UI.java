@@ -331,6 +331,13 @@ public class UI
 
         // draw player's items
         for (int i = 0; i < panel.player.inventory.size(); i++) {
+
+            // what is currently equipped will be highlighted in yellow/orange
+            if(panel.player.inventory.get(i) == panel.player.currentWeapon || panel.player.inventory.get(i) == panel.player.currentShield) {
+                g2.setColor(new Color(240, 190, 90));
+                g2.fillRoundRect(slotX, slotY, panel.tileSize, panel.tileSize, 10, 10);
+            }
+
             g2.drawImage(panel.player.inventory.get(i).down1, slotX, slotY, null);
 
             slotX += slotSize;

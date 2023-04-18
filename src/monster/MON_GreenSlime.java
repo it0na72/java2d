@@ -13,7 +13,7 @@ public class MON_GreenSlime extends entity
         this.panel = panel;
 
 
-        type = 2;
+        type = type_monster;
         name = "Blue Slime";
         speed = 1;
         maxLife = 4;

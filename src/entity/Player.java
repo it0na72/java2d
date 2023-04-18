@@ -37,8 +37,8 @@ public class Player extends entity
         solidArea.width = 13;
         solidArea.height = 20;
 
-        attackArea.width = 36;
-        attackArea.height = 36;
+//        attackArea.width = 36;
+//        attackArea.height = 36;
 
         setDefaultValues();
         getPlayerImage();
@@ -77,6 +77,7 @@ public class Player extends entity
 
     }
     public int getAttack() {
+        attackArea = currentWeapon.attackArea;
         return attack = strength * currentWeapon.attackValue;
     }
     public int getDefense() {
@@ -93,18 +94,19 @@ public class Player extends entity
             left1 = setup("res/player/left1", panel.tileSize, panel.tileSize);
             left2 = setup("res/player/left2", panel.tileSize, panel.tileSize);
         }
-
         public void getPlayerAttackImage () {
 
-        attackUp1 = setup("res/player/attack_up_1", panel.tileSize, panel.tileSize*2);
-        attackUp2 = setup("res/player/attack_up_2", panel.tileSize, panel.tileSize*2);
-        attackDown1 = setup("res/player/attack_down_1", panel.tileSize, panel.tileSize*2);
-        attackDown2 = setup("res/player/attack_down_2", panel.tileSize, panel.tileSize*2);
-        attackLeft1 = setup("res/player/attack_left_1", panel.tileSize*2, panel.tileSize*2);
-        attackLeft2 = setup("res/player/attack_left_2", panel.tileSize*2, panel.tileSize*2);
-        attackRight1 = setup("res/player/attack_right_1", panel.tileSize*2, panel.tileSize*2);
-        attackRight2 = setup("res/player/attack_right_2", panel.tileSize*2, panel.tileSize*2);
+        if(currentWeapon.type == type_sword) {
+            attackUp1 = setup("res/player/attack_up_1", panel.tileSize, panel.tileSize*2);
+            attackUp2 = setup("res/player/attack_up_2", panel.tileSize, panel.tileSize*2);
+            attackDown1 = setup("res/player/attack_down_1", panel.tileSize, panel.tileSize*2);
+            attackDown2 = setup("res/player/attack_down_2", panel.tileSize, panel.tileSize*2);
+            attackLeft1 = setup("res/player/attack_left_1", panel.tileSize*2, panel.tileSize*2);
+            attackLeft2 = setup("res/player/attack_left_2", panel.tileSize*2, panel.tileSize*2);
+            attackRight1 = setup("res/player/attack_right_1", panel.tileSize*2, panel.tileSize*2);
+            attackRight2 = setup("res/player/attack_right_2", panel.tileSize*2, panel.tileSize*2);
         }
+    }
 
     public void update() {
 
@@ -176,7 +178,7 @@ public class Player extends entity
             }
         }
 
-        // this needs to be outside of key if statement!
+        // this needs to be outside of key if statement
         if(invincible == true) {
             invincibleCounter++;
             if(invincibleCounter > 60) {
@@ -306,7 +308,7 @@ public class Player extends entity
         if(exp >= nextLevelExp) {
             level ++;
             exp = exp - nextLevelExp;
-            nextLevelExp = nextLevelExp*2;  // This refreshes the experience but also takes into consideration any exp gained that exceeds the nextLevelExp. For example, slimes give you 2exp and you need to kill 3 slimes to level up (that's 6exp despite only requiring 5 to level up). This will cause the exp to reset but the excess exp to be saved when you level up (this should make the game more balanced and prevent the player from levelling up too rapidly).
+            nextLevelExp = nextLevelExp*2;  // This refreshes the experience but also takes into consideration any exp gained that exceeds the nextLevelExp. For example, slimes give you 2 exp and you need to kill 3 slimes to level up (that's 6exp despite only requiring 5 to level up). This will cause the exp to reset but the excess exp to be saved when you level up (this should make the game more balanced and prevent the player from levelling up too rapidly).
             maxLife += 2;
             strength ++;
             dexterity ++;
@@ -316,6 +318,26 @@ public class Player extends entity
             panel.playSE(8);
             panel.gameState = panel.dialogueState;
             panel.ui.currentDialogue = "You are level: " + level + "! " + "Congratulations!";
+        }
+    }
+    public void selectItem() {
+        int itemIndex = panel.ui.getItemIndexOnSlot();
+
+        if (itemIndex < inventory.size()) {
+            entity selectedItem = inventory.get(itemIndex);
+            if(selectedItem.type == type_sword || selectedItem.type == type_axe) {
+                currentWeapon = selectedItem;
+                attack = getAttack();
+
+            }
+            if (selectedItem.type == type_shield) {
+                currentShield = selectedItem;
+                defense = getDefense();
+            }
+            if(selectedItem.type == type_consumable) {
+                selectedItem.use(this);
+                inventory.remove(itemIndex);
+            }
         }
     }
     public void draw(Graphics2D g2) {

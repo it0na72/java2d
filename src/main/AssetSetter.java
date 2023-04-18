@@ -2,7 +2,10 @@ package main;
 
 import entity.NPC_OldMan;
 import monster.MON_GreenSlime;
+import object.OBJ_Axe;
 import object.OBJ_Key;
+import object.OBJ_Potion_Red;
+import object.OBJ_Shield_Blue;
 
 public class AssetSetter // this class displays the location of the objects in the map
 {
@@ -25,6 +28,18 @@ public class AssetSetter // this class displays the location of the objects in t
         panel.obj[i] = new OBJ_Key(panel);
         panel.obj[i].worldX = panel.tileSize*26;
         panel.obj[i].worldY = panel.tileSize*21;
+        i++;
+        panel.obj[i] = new OBJ_Axe(panel);
+        panel.obj[i].worldX = panel.tileSize*33;
+        panel.obj[i].worldY = panel.tileSize*21;
+        i++;
+        panel.obj[i] = new OBJ_Shield_Blue(panel);
+        panel.obj[i].worldX = panel.tileSize*35;
+        panel.obj[i].worldY = panel.tileSize*21;
+        i++;
+        panel.obj[i] = new OBJ_Potion_Red(panel);
+        panel.obj[i].worldX = panel.tileSize*22;
+        panel.obj[i].worldY = panel.tileSize*27;
         i++;
     }
 
@@ -56,6 +71,7 @@ public class AssetSetter // this class displays the location of the objects in t
         panel.monster[i].worldX = panel.tileSize*38;
         panel.monster[i].worldY = panel.tileSize*42;
         i++;
+
 
     }
 }

@@ -145,6 +145,9 @@ public class keyHandler implements KeyListener
                 panel.playSE(8);
             }
         }
+        if (code == KeyEvent.VK_ENTER) {
+            panel.player.selectItem();
+        }
     }
 
     @Override
