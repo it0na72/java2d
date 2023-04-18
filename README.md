@@ -1,8 +1,7 @@
 # Java 2D Adventure Game 
 
-
 This is a Java 2D adventure game and also my final bootcamp project. The intention of this game is to demonstrate what I have learned 
-in the bootcamp, plus a couple more things I managed to learn on my own. 
+in the bootcamp, plus a couple more things I managed to learn on my own. This is still being updated on a daily basis. Eventually I plan on adding external libraries to make more functions. 
 
 ### Table of contents:
 - How to Install
@@ -29,7 +28,7 @@ the treasure. There is a couple of easter eggs within the game, so please let me
 - Added an invincible state after hitting a monster
 - Create battle system (also boss fights)
 - Create NPCs & Dialogue system
-- Create inventory
+- Create player inventory
 - Create title screen & game state (pause game, game over screen & save/load game)
 
 ### Future plans:
@@ -40,7 +39,7 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 ### Current bugs (TBC):
 - [ ] There is no sound effects or music in the game yet. I added all the sound files but they are still not working. Will try to fix this as soon as possible
 - [ ] Healing fountain location is slightly bugged. You need to be in the EXACT tile for it to work
-- [ ] If you spam the healing fountain, you will get more health than you currently have (eg: if you have maximum health and you use the healing fountain, you get 3 extra hearts on top of that)
+- [x] FIXED. ~~If you spam the healing fountain, you will get more health than you currently have (eg: if you have maximum health and you use the healing fountain, you get 3 extra hearts on top of that)~~
 - [ ] Attack animation is slightly out of focus
 
 ### Screenshots of the game:
