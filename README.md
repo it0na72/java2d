@@ -46,37 +46,41 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 
 **Start Screen**
 
-> ![Start screen](https://user-images.githubusercontent.com/56265972/231503077-e176b965-1b09-4554-b836-5698eacd982d.png)
+> ![Start screen](https://user-images.githubusercontent.com/56265972/233202305-f56a9e93-5887-4d6b-9ee9-a6692b72173a.png)
+
 
 **Spawn of the game**
 
-> ![Spawn of the game](https://user-images.githubusercontent.com/56265972/231303209-db95af38-78da-4da4-929b-0d72d08cfedb.png)
+> ![Spawn of the game](https://user-images.githubusercontent.com/56265972/233201011-b37d1b15-a05f-4731-aa3d-e9f0878ac13c.png)
 
 **NPC Dialogue**
 
-> ![NPC Dialogue](https://user-images.githubusercontent.com/56265972/231303259-4b560872-1daa-46ec-be5a-d73ab74befab.png)
+> ![NPC Dialogue](https://user-images.githubusercontent.com/56265972/233201999-506c5715-b061-4726-8027-a514e06e2551.png)
+
 
 **Slime monsters**
 
-> ![Slime monsters](https://user-images.githubusercontent.com/56265972/232582111-5957679d-df29-4db7-a621-8c31650f11b7.png)
+> ![Slime monsters](https://user-images.githubusercontent.com/56265972/233201107-88ea13ad-e633-4ef1-b439-f69fce9d4eb6.png)
+
 
 **When damage has been taken from the monsters, the character gets 1 second invincible state**
 
-> ![When damage has been taken, character gets 1 second invincible state](https://user-images.githubusercontent.com/56265972/232582266-3d0006f8-a3c1-4737-afce-c5080a838a1b.png)
+> ![When damage has been taken, character gets 1 second invincible state](https://user-images.githubusercontent.com/56265972/233201943-3f0e1784-99ee-4e03-90d6-4670ca3a7689.png)
+
 
 **Stats menu**
 
-> ![](https://user-images.githubusercontent.com/56265972/232582401-d56250c5-be2b-490b-819f-a15241e468e8.png)
-
-
+> ![nGwF7knrQr](https://user-images.githubusercontent.com/56265972/233201187-093b57d1-eb99-41a4-abce-61626f7db501.png)
 
 **Traps across the map**
 
-> ![Traps across the map](https://user-images.githubusercontent.com/56265972/231303415-54fe064a-95a1-44bc-a4d3-32f27b4cf27c.png)
+> ![Traps across the map](https://user-images.githubusercontent.com/56265972/233201709-24810488-ceaa-44ae-941b-cafcf207bf6e.png)
+
 
 **Healing fountain**
 
-> ![Healing water](https://user-images.githubusercontent.com/56265972/231303442-ba864c05-3323-41ba-983b-220399e9146b.png)
+> ![Healing water](https://user-images.githubusercontent.com/56265972/233201761-80ee52b0-2561-4383-8476-9767c887af03.png)
+
 
 
 This is still being constantly updated! 
