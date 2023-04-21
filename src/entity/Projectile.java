@@ -31,7 +31,11 @@ public class Projectile extends entity
             }
         }
         if(user != panel.player) {
-
+            boolean contactPlayer = panel.checker.checkPlayer(this);
+            if(panel.player.invincible == false && contactPlayer == true) {
+                damagePlayer(attack);
+                alive = false;
+            }
         }
         switch(direction) {
             case "up": worldY -= speed; break;
@@ -56,6 +60,10 @@ public class Projectile extends entity
             }
             spriteCounter = 0;
         }
-
     }
+    public boolean haveResource(entity user) {
+        boolean haveResource = false;
+        return haveResource;
+    }
+    public void subtractResource(entity user) {}
 }

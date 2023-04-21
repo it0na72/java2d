@@ -2,10 +2,7 @@ package main;
 
 import entity.NPC_OldMan;
 import monster.MON_GreenSlime;
-import object.OBJ_Axe;
-import object.OBJ_Key;
-import object.OBJ_Potion_Red;
-import object.OBJ_Shield_Blue;
+import object.*;
 
 public class AssetSetter // this class displays the location of the objects in the map
 {
@@ -17,15 +14,15 @@ public class AssetSetter // this class displays the location of the objects in t
 
     public void setObject() {
         int i = 0;
-        panel.obj[i] = new OBJ_Key(panel);
+        panel.obj[i] = new OBJ_Coin(panel);
         panel.obj[i].worldX = panel.tileSize*25;
         panel.obj[i].worldY = panel.tileSize*23;
         i++;
-        panel.obj[i] = new OBJ_Key(panel);
+        panel.obj[i] = new OBJ_Coin(panel);
         panel.obj[i].worldX = panel.tileSize*21;
         panel.obj[i].worldY = panel.tileSize*19;
         i++;
-        panel.obj[i] = new OBJ_Key(panel);
+        panel.obj[i] = new OBJ_Coin(panel);
         panel.obj[i].worldX = panel.tileSize*26;
         panel.obj[i].worldY = panel.tileSize*21;
         i++;
@@ -40,6 +37,14 @@ public class AssetSetter // this class displays the location of the objects in t
         panel.obj[i] = new OBJ_Potion_Red(panel);
         panel.obj[i].worldX = panel.tileSize*22;
         panel.obj[i].worldY = panel.tileSize*27;
+        i++;
+        panel.obj[i] = new OBJ_Heart(panel);
+        panel.obj[i].worldX = panel.tileSize*22;
+        panel.obj[i].worldY = panel.tileSize*29;
+        i++;
+        panel.obj[i] = new OBJ_ManaCrystal(panel);
+        panel.obj[i].worldX = panel.tileSize*22;
+        panel.obj[i].worldY = panel.tileSize*31;
         i++;
     }
 

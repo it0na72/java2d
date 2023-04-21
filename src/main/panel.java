@@ -43,7 +43,7 @@ public class panel extends JPanel implements Runnable
 
     // entity and objects
     public Player player = new Player(this,keyH);
-    public entity obj[] = new entity[10]; // 10 slots for more objects (can add more eventually)
+    public entity obj[] = new entity[20]; // 20 slots for more objects (can add more eventually)
     public entity npc[] = new entity[10];
     public entity monster[] = new entity[20];
     public ArrayList<entity> projectileList = new ArrayList<>();
@@ -130,6 +130,7 @@ public class panel extends JPanel implements Runnable
                     monster[i].update();
                 }
                     if(monster[i].alive == false) {
+                        monster[i].checkDrop();
                         monster[i] = null;
                     }
                 }
@@ -149,7 +150,6 @@ public class panel extends JPanel implements Runnable
         {
             // nothing
         }
-
     }
     public void paintComponent(Graphics g){
 

@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class entity
 {
-    main.panel panel;
+    public main.panel panel;
     public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
     public BufferedImage attackUp1, attackUp2, attackDown1, attackDown2, attackLeft1, attackLeft2, attackRight1, attackRight2;
     public BufferedImage image, image2, image3;
@@ -49,6 +49,7 @@ public class entity
     public int life;
     public int maxMana;
     public int mana;
+    public int ammo;
     public int level;
     public int strength;
     public int dexterity;
@@ -62,6 +63,7 @@ public class entity
     public Projectile projectile;
 
     // item attributes
+    public int value;
     public int attackValue;
     public int defenseValue;
     public String description = "";
@@ -76,6 +78,7 @@ public class entity
     public final int type_axe = 4;
     public final int type_shield = 5;
     public final int type_consumable = 6;
+    public final int type_pickupOnly = 7;
 
     public entity(main.panel panel) {
         this.panel = panel;
@@ -88,6 +91,17 @@ public class entity
 
     }
     public void use(entity entity) {}
+    public void checkDrop(){}
+    public void dropItem(entity droppedItem){
+        for(int i = 0; i < panel.obj.length; i++) {
+            if(panel.obj[i] == null) {
+                panel.obj[i] = droppedItem;
+                panel.obj[i].worldX = worldX; // dead monster's worldX
+                panel.obj[i].worldY = worldY;
+                break;
+            }
+        }
+    }
     public void update() {
 
         setAction();
@@ -100,18 +114,8 @@ public class entity
         boolean contactPlayer = panel.checker.checkPlayer(this);
 
         if(this.type == type_monster && contactPlayer == true) {
-            if(panel.player.invincible == false) {
-                // player can take damage
-                panel.playSE(6);
-                int damage = attack - panel.player.defense;
-                if (damage < 0) {
-                    damage = 0;
-                }
-                panel.player.life -= damage;
-                panel.player.invincible = true;
-            }
+            damagePlayer(attack);
         }
-
         // if collision is false, player can move
         if(collisionOn == false) {
 
@@ -140,7 +144,22 @@ public class entity
                 invincibleCounter = 0;
             }
         }
+        if (shotAvailableCounter < 30) {
+            shotAvailableCounter++;
+        }
     }
+    public void damagePlayer(int attack) {
+            if(panel.player.invincible == false) {
+                // player can take damage
+                panel.playSE(6);
+                int damage = attack - panel.player.defense;
+                if (damage < 0) {
+                    damage = 0;
+                }
+                panel.player.life -= damage;
+                panel.player.invincible = true;
+            }
+        }
     public void draw(Graphics2D g2) {
 
         BufferedImage image = null;
@@ -200,7 +219,7 @@ public class entity
                 dyingAnimation(g2);
             }
 
-            g2.drawImage(image, screenX, screenY, panel.tileSize, panel.tileSize, null);
+            g2.drawImage(image, screenX, screenY, null);
 
             changeAlpha(g2, 1F);
         }

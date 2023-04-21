@@ -1,7 +1,7 @@
 package main;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 public class Sound
@@ -33,6 +33,7 @@ public class Sound
             e.printStackTrace();
         }
     }
+
 
     public void play() {
         if(clip != null) {

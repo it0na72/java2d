@@ -59,6 +59,9 @@ public class Player extends entity
         level = 1;
         maxLife = 6;
         life = maxLife;
+        maxMana = 4;
+        mana = maxMana;
+        ammo = 10;
         strength = 1; // the more strength the character has, the more damage he gives (duh)
         dexterity = 1; // the more dexterity the character has, the less damage he receives, due to evading all the attacks
         exp = 0;
@@ -168,7 +171,6 @@ public class Player extends entity
                  spriteCounter = 0;
 
              }
-
              attackCanceled = false;
 
             panel.keyH.enterPressed = false;
@@ -180,10 +182,13 @@ public class Player extends entity
             }
         }
 
-        if(panel.keyH.shotKeyPressed == true && projectile.alive == false && shotAvailableCounter == 30) {
+        if(panel.keyH.shotKeyPressed == true && projectile.alive == false && shotAvailableCounter == 30 && projectile.haveResource(this) == true) {
 
             // set default coordinates, direction and user
             projectile.set(worldX, worldY, direction, true, this);
+
+            // subtract the cost (mana)
+            projectile.subtractResource(this);
 
             // add it to the list
             panel.projectileList.add(projectile);
@@ -203,6 +208,12 @@ public class Player extends entity
         }
         if (shotAvailableCounter < 30) {
             shotAvailableCounter++;
+        }
+        if(life > maxLife) {
+            life = maxLife;
+        }
+        if(mana > maxMana) {
+            mana = maxMana;
         }
     }
     public void attacking() {
@@ -252,18 +263,28 @@ public class Player extends entity
     public void pickUpObject(int i) {
         if(i != 999) {
 
-            String text;
+            // pickup only items
+            if(panel.obj[i].type == type_pickupOnly) {
 
-            if (inventory.size() != maxInventorySize) {
-                inventory.add(panel.obj[i]);
-                panel.playSE(1);
-                text = "You got a " + panel.obj[i].name + "!";
+                panel.obj[i].use(this);
+                panel.obj[i] = null;
             }
+
+            // inventory items
             else {
-                text = "Your inventory is full!";
+                String text;
+
+                if (inventory.size() != maxInventorySize) {
+                    inventory.add(panel.obj[i]);
+                    panel.playSE(1);
+                    text = "You got a " + panel.obj[i].name + "!";
+                }
+                else {
+                    text = "Your inventory is full!";
+                }
+                panel.ui.addMessage(text);
+                panel.obj[i] = null;
             }
-            panel.ui.addMessage(text);
-            panel.obj[i] = null;
         }
     }
 

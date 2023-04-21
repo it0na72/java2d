@@ -85,8 +85,9 @@ public class EventHandler
             panel.gameState = gameState;
             panel.player.attackCanceled = true;
             panel.playSE(2);
-            panel.ui.currentDialogue = "You drank some water. \nYou feel regenerated and you got some \nhealth back.";
+            panel.ui.currentDialogue = "You drank some water. \nYou feel regenerated and you got some \nhealth & mana back.";
             panel.player.life = panel.player.maxLife;
+            panel.player.mana = panel.player.maxMana;
             panel.aSetter.setMonster();
 
         }
