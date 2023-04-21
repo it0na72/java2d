@@ -19,6 +19,7 @@ public class Sound
         soundURL[6] = getClass().getResource("res/sound/receivedamage.wav");
         soundURL[7] = getClass().getResource("res/sound/levelup.wav");
         soundURL[8] = getClass().getResource("res/sound/cursor.wav");
+        soundURL[9] = getClass().getResource("res/sound/burning.wav");
     }
 
     public void setFile(int i) {
@@ -29,8 +30,10 @@ public class Sound
             clip.open(ais);
 
         } catch(Exception e) {
+            e.printStackTrace();
         }
     }
+
     public void play() {
         if(clip != null) {
             clip.start();  // cant play music for some reason...//

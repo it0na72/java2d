@@ -2,6 +2,7 @@ package entity;
 
 import main.keyHandler;
 import main.panel;
+import object.OBJ_Fireball;
 import object.OBJ_Key;
 import object.OBJ_Shield_Wood;
 import object.OBJ_Sword_Normal;
@@ -65,6 +66,7 @@ public class Player extends entity
         coin = 0;
         currentWeapon = new OBJ_Sword_Normal(panel);
         currentShield = new OBJ_Shield_Wood(panel);
+        projectile = new OBJ_Fireball(panel);
         attack = getAttack(); // the total attack value is decided by strength and the weapon hes using
         defense = getDefense(); // the total defense value is decided by the dexterity and shield
 
@@ -178,6 +180,19 @@ public class Player extends entity
             }
         }
 
+        if(panel.keyH.shotKeyPressed == true && projectile.alive == false && shotAvailableCounter == 30) {
+
+            // set default coordinates, direction and user
+            projectile.set(worldX, worldY, direction, true, this);
+
+            // add it to the list
+            panel.projectileList.add(projectile);
+
+            shotAvailableCounter = 0;
+
+            panel.playSE(9);
+        }
+
         // this needs to be outside of key if statement
         if(invincible == true) {
             invincibleCounter++;
@@ -185,6 +200,9 @@ public class Player extends entity
                 invincible = false;
                 invincibleCounter = 0;
             }
+        }
+        if (shotAvailableCounter < 30) {
+            shotAvailableCounter++;
         }
     }
     public void attacking() {
@@ -216,7 +234,7 @@ public class Player extends entity
 
             // check monster collision with the updated worldX, worldY and solidArea
             int monsterIndex = panel.checker.checkEntity(this, panel.monster);
-            damageMonster(monsterIndex);
+            damageMonster(monsterIndex, attack);
 
             // after checking for collisions, restores the original data
             worldX = currentWorldX;
@@ -264,7 +282,7 @@ public class Player extends entity
     }
     public void contactMonster(int i) {
         if(i != 999) {
-            if(invincible == false) {
+            if(invincible == false && panel.monster[i].dying == false) {
                 panel.playSE(6);
 
                 int damage = panel.monster[i].attack - defense;
@@ -276,7 +294,7 @@ public class Player extends entity
             }
         }
     }
-    public void damageMonster(int i) {
+    public void damageMonster(int i, int attack) {
         if (i != 999 )
         {
             if (panel.monster[i].invincible == false) {

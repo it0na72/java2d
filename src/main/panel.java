@@ -46,7 +46,7 @@ public class panel extends JPanel implements Runnable
     public entity obj[] = new entity[10]; // 10 slots for more objects (can add more eventually)
     public entity npc[] = new entity[10];
     public entity monster[] = new entity[20];
-
+    public ArrayList<entity> projectileList = new ArrayList<>();
     ArrayList<entity> entityList = new ArrayList<>();
 
 
@@ -134,6 +134,16 @@ public class panel extends JPanel implements Runnable
                     }
                 }
             }
+            for (int i = 0; i < projectileList.size(); i++) {
+                if(projectileList.get(i) != null) {
+                    if(projectileList.get(i).alive == true) {
+                        projectileList.get(i).update();
+                    }
+                    if(projectileList.get(i).alive == false) {
+                        projectileList.remove(i);
+                    }
+                }
+            }
         }
         if (gameState == pauseState)
         {
@@ -181,6 +191,11 @@ public class panel extends JPanel implements Runnable
         for(int i = 0; i < monster.length; i++) {
             if(monster[i] != null) {
                 entityList.add(monster[i]);
+            }
+        }
+        for(int i = 0; i < projectileList.size(); i++) {
+            if(projectileList.get(i) != null) {
+                entityList.add(projectileList.get(i));
             }
         }
 

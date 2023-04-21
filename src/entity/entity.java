@@ -38,6 +38,7 @@ public class entity
     public int spriteCounter = 0;
     public int actionLockCounter = 0;
     public int invincibleCounter = 0;
+    public int shotAvailableCounter = 0;
     public int dyingCounter = 0;
     int hpBarCounter = 0;
 
@@ -46,6 +47,8 @@ public class entity
     public int speed;
     public int maxLife;
     public int life;
+    public int maxMana;
+    public int mana;
     public int level;
     public int strength;
     public int dexterity;
@@ -56,11 +59,13 @@ public class entity
     public int coin;
     public entity currentWeapon;
     public entity currentShield;
+    public Projectile projectile;
 
     // item attributes
     public int attackValue;
     public int defenseValue;
     public String description = "";
+    public int useCost;
 
     // type
     public int type; // 0 = player, 1 = npc, 2 = monster
@@ -215,7 +220,6 @@ public class entity
         if (dyingCounter > i*6 && dyingCounter <= i*7) {changeAlpha(g2, 0F);}
         if (dyingCounter > i*7 && dyingCounter <= i*8) {changeAlpha(g2, 1F);}
         if(dyingCounter > i*8) {
-            dying = false;
             alive = false;
         }
     }
