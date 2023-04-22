@@ -111,6 +111,7 @@ public class entity
         panel.checker.checkObject(this, false);
         panel.checker.checkEntity(this, panel.npc);
         panel.checker.checkEntity(this, panel.monster);
+        panel.checker.checkEntity(this, panel.iTile);
         boolean contactPlayer = panel.checker.checkPlayer(this);
 
         if(this.type == type_monster && contactPlayer == true) {

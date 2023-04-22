@@ -3,6 +3,7 @@ package main;
 import entity.NPC_OldMan;
 import monster.MON_GreenSlime;
 import object.*;
+import tiles_interactive.IT_DryTree;
 
 public class AssetSetter // this class displays the location of the objects in the map
 {
@@ -76,6 +77,16 @@ public class AssetSetter // this class displays the location of the objects in t
         panel.monster[i].worldX = panel.tileSize*38;
         panel.monster[i].worldY = panel.tileSize*42;
         i++;
+    }
+    public void setInteractiveTile() {
+         int i = 0;
+        panel.iTile[i] = new IT_DryTree(panel, 27, 12); i++;
+        panel.iTile[i] = new IT_DryTree(panel, 28, 12); i++;
+        panel.iTile[i] = new IT_DryTree(panel, 29, 12); i++;
+        panel.iTile[i] = new IT_DryTree(panel, 30, 12); i++;
+        panel.iTile[i] = new IT_DryTree(panel, 31, 12); i++;
+        panel.iTile[i] = new IT_DryTree(panel, 32, 12); i++;
+        panel.iTile[i] = new IT_DryTree(panel, 33, 12); i++;
 
 
     }

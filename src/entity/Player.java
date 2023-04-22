@@ -150,6 +150,9 @@ public class Player extends entity
             int monsterIndex = panel.checker.checkEntity(this, panel.monster);
             contactMonster(monsterIndex);
 
+            //  check interactive tile collision
+            int iTileIndex = panel.checker.checkEntity(this, panel.iTile);
+
             // check event
             panel.eHandler.checkEvent();
 
@@ -247,6 +250,9 @@ public class Player extends entity
             int monsterIndex = panel.checker.checkEntity(this, panel.monster);
             damageMonster(monsterIndex, attack);
 
+            int iTileIndex = panel.checker.checkEntity(this, panel.iTile);
+            damageInteractiveTile(iTileIndex);
+
             // after checking for collisions, restores the original data
             worldX = currentWorldX;
             worldY = currentWorldY;
@@ -342,7 +348,19 @@ public class Player extends entity
             }
         }
     }
+    public void damageInteractiveTile(int i) {
+        if(i != 999 && panel.iTile[i].destructible == true && panel.iTile[i].isCorrectWeapon(this) == true && panel.iTile[i].invincible == false) {
+            panel.iTile[i].playSE();
+            panel.iTile[i].life--;
+            panel.iTile[i].invincible = true;
 
+            if(panel.iTile[i].life == 0) {
+                panel.iTile[i] = panel.iTile[i].getDestroyedForm();
+            }
+            panel.iTile[i] = panel.iTile[i].getDestroyedForm();
+
+        }
+    }
     public void checkLevelUp() {
         if(exp >= nextLevelExp) {
             level ++;

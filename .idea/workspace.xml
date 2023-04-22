@@ -9,38 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Added fire projectiles that can be used against monsters. Will probably update this later with a different colour (maybe blue fire).">
-      <change afterPath="$PROJECT_DIR$/res/objects/coin_bronze.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/objects/manacrystal_blank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/objects/manacrystal_full.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/projectile/rock_down_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Coin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_ManaCrystal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Rock.java" afterDir="false" />
+    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Monsters now shoot random rocks in the direction they are facing. Also added item drops: when a monster is killed, there's a chance it can drop a random item (heart, mana or coins).">
+      <change afterPath="$PROJECT_DIR$/res/maps/worldV3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sound/cuttree.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/IT_DryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/IT_Trunk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/drytree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/interactiveTile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/trunk.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/Projectile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Projectile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/EventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/UI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/monster/MON_GreenSlime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/monster/MON_GreenSlime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Fireball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Fireball.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Potion_Red.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Potion_Red.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/maps/worldV2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/maps/worldV2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Heart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Heart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/tiles/java 2d.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/maps/worldV2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/worldV2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles/java 2d.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Projectile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Heart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Heart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Potion_Red.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Potion_Red.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +72,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/abikyoukan/IdeaProjects/java 2d/res/objects",
+    "last_opened_file_path": "C:/Users/abikyoukan/IdeaProjects/java 2d/res/sound",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -94,16 +85,18 @@
       <recent name="entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\sound" />
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\tiles_interactive" />
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\maps" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\objects" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\projectile" />
-      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\tiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\tiles_interactive" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\sound" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\projectile" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\objects" />
       <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\tiles" />
-      <recent name="C:\Users\abikyoukan\IdeaProjects\java 2d\res\player" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -188,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682094144670</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Monsters now shoot random rocks in the direction they are facing. Also added item drops: when a monster is killed, there's a chance it can drop a random item (heart, mana or coins).">
+      <created>1682107369345</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682107369345</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +211,7 @@
     <MESSAGE value="Stats window now gets updated without having to change the code. Also added an inventory window with a description box below. Sound still doesn't work." />
     <MESSAGE value="Fixed healing fountain bug. Added more items to pick up, a blue shield, an axe and a healing potion." />
     <MESSAGE value="Added fire projectiles that can be used against monsters. Will probably update this later with a different colour (maybe blue fire)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fire projectiles that can be used against monsters. Will probably update this later with a different colour (maybe blue fire)." />
+    <MESSAGE value="Monsters now shoot random rocks in the direction they are facing. Also added item drops: when a monster is killed, there's a chance it can drop a random item (heart, mana or coins)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Monsters now shoot random rocks in the direction they are facing. Also added item drops: when a monster is killed, there's a chance it can drop a random item (heart, mana or coins)." />
   </component>
 </project>
