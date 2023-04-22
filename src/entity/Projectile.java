@@ -27,6 +27,7 @@ public class Projectile extends entity
             int monsterIndex = panel.checker.checkEntity(this, panel.monster);
             if(monsterIndex != 999) {
                 panel.player.damageMonster(monsterIndex, attack);
+                generateParticle(user.projectile, panel.monster[monsterIndex]);
                 alive = false;
             }
         }
@@ -34,6 +35,7 @@ public class Projectile extends entity
             boolean contactPlayer = panel.checker.checkPlayer(this);
             if(panel.player.invincible == false && contactPlayer == true) {
                 damagePlayer(attack);
+                generateParticle(user.projectile, panel.player);
                 alive = false;
             }
         }

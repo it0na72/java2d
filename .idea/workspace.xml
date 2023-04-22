@@ -9,29 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Monsters now shoot random rocks in the direction they are facing. Also added item drops: when a monster is killed, there's a chance it can drop a random item (heart, mana or coins).">
-      <change afterPath="$PROJECT_DIR$/res/maps/worldV3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sound/cuttree.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/IT_DryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/IT_Trunk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/drytree.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/interactiveTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/tiles_interactive/trunk.png" afterDir="false" />
+    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Added interactive tiles. Dried trees can now be cut with an axe. If the player tries to cut a dry tree with a sword, the tree will not fall.">
+      <change afterPath="$PROJECT_DIR$/src/entity/particle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/maps/worldV2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/maps/worldV2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Heart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/object/OBJ_Heart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/tiles/java 2d.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/maps/worldV2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/worldV2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tiles/java 2d.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/tiles_interactive/IT_DryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/tiles_interactive/IT_DryTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/tiles_interactive/interactiveTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/tiles_interactive/interactiveTile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles_interactive/IT_DryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/res/tiles_interactive/IT_DryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles_interactive/interactiveTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/res/tiles_interactive/interactiveTile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Projectile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Rock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682107369345</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added interactive tiles. Dried trees can now be cut with an axe. If the player tries to cut a dry tree with a sword, the tree will not fall.">
+      <created>1682190051742</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682190051742</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -212,6 +214,7 @@
     <MESSAGE value="Fixed healing fountain bug. Added more items to pick up, a blue shield, an axe and a healing potion." />
     <MESSAGE value="Added fire projectiles that can be used against monsters. Will probably update this later with a different colour (maybe blue fire)." />
     <MESSAGE value="Monsters now shoot random rocks in the direction they are facing. Also added item drops: when a monster is killed, there's a chance it can drop a random item (heart, mana or coins)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Monsters now shoot random rocks in the direction they are facing. Also added item drops: when a monster is killed, there's a chance it can drop a random item (heart, mana or coins)." />
+    <MESSAGE value="Added interactive tiles. Dried trees can now be cut with an axe. If the player tries to cut a dry tree with a sword, the tree will not fall." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added interactive tiles. Dried trees can now be cut with an axe. If the player tries to cut a dry tree with a sword, the tree will not fall." />
   </component>
 </project>
