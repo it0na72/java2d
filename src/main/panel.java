@@ -9,7 +9,6 @@ import tiles_interactive.interactiveTile;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -20,14 +19,16 @@ public class panel extends JPanel implements Runnable
     final int scale = 3;
 
     public final int tileSize = originalTileSize * scale; // 48x48 tile scalable
-    public final int maxScreenColumn = 16;
+    public final int maxScreenColumn = 20;
     public final int maxScreenRow = 12;
-    public final int screenWidth = tileSize * maxScreenColumn; // 46*16 = 768 pixels
+    public final int screenWidth = tileSize * maxScreenColumn; // 20*16 = 960 pixels
     public final int screenHeight = tileSize * maxScreenRow; // 48x12 = 576 pixel (size of game screen)
+
 
     // World Settings
     public final int maxWorldColumn = 50;
     public final int maxWorldRow = 50;
+
 
 
     // FPS of the game
@@ -61,6 +62,7 @@ public class panel extends JPanel implements Runnable
     public final int pauseState = 2;
     public final int dialogueState = 3;
     public final int characterState = 4;
+    public final int optionsState = 5;
 
     public panel(){
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));

@@ -9,24 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="Added interactive tiles. Dried trees can now be cut with an axe. If the player tries to cut a dry tree with a sword, the tree will not fall.">
-      <change afterPath="$PROJECT_DIR$/src/entity/particle.java" afterDir="false" />
+    <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="changed resolution of the game">
+      <change afterPath="$PROJECT_DIR$/out/production/java 2d/entity/particle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/AssetSetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/tiles_interactive/IT_DryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/tiles_interactive/IT_DryTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/tiles_interactive/interactiveTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/tiles_interactive/interactiveTile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tiles_interactive/IT_DryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/res/tiles_interactive/IT_DryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/tiles_interactive/interactiveTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/res/tiles_interactive/interactiveTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Projectile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/UI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/keyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/keyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/keyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/panel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Rock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Rock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,18 +61,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/abikyoukan/IdeaProjects/java 2d/res/sound",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abikyoukan/IdeaProjects/java 2d/res/sound&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="entity" />
@@ -190,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682190051742</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added particles with gravity. When the player hits a tree with an axe, small particles will show up. Particles will also be shown when a fireball hits a monster, or a monster hits with a rock to the player.">
+      <created>1682193616796</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682193616796</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,6 +220,8 @@
     <MESSAGE value="Added fire projectiles that can be used against monsters. Will probably update this later with a different colour (maybe blue fire)." />
     <MESSAGE value="Monsters now shoot random rocks in the direction they are facing. Also added item drops: when a monster is killed, there's a chance it can drop a random item (heart, mana or coins)." />
     <MESSAGE value="Added interactive tiles. Dried trees can now be cut with an axe. If the player tries to cut a dry tree with a sword, the tree will not fall." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added interactive tiles. Dried trees can now be cut with an axe. If the player tries to cut a dry tree with a sword, the tree will not fall." />
+    <MESSAGE value="Added particles with gravity. When the player hits a tree with an axe, small particles will show up. Particles will also be shown when a fireball hits a monster, or a monster hits with a rock to the player." />
+    <MESSAGE value="changed resolution of the game" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed resolution of the game" />
   </component>
 </project>

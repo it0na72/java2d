@@ -23,6 +23,7 @@ public class UI
     public int commandNum = 0;
     public int slotCol = 0;
     public int slotRow = 0;
+    int subState = 0;
 
 
     public UI(panel panel) {
@@ -91,6 +92,10 @@ public class UI
         if(panel.gameState == panel.characterState) {
             drawCharacterScreen();
             drawInventory();
+        }
+        // options state
+        if(panel.gameState == panel.optionsState) {
+            drawOptionsScreen();
         }
     }
     public void drawPlayerLife() {
@@ -402,6 +407,7 @@ public class UI
         int textY = dFrameY + panel.tileSize;
         g2.setFont(g2.getFont().deriveFont(28F));
 
+
         int itemIndex = getItemIndexOnSlot();
 
         if(itemIndex < panel.player.inventory.size()) {
@@ -414,6 +420,86 @@ public class UI
             }
         }
 
+
+    }
+    public void drawOptionsScreen(){
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(32F));
+
+        // sub window
+        int frameX = panel.tileSize*6;
+        int frameY = panel.tileSize;
+        int frameWidth = panel.tileSize*8;
+        int frameHeight = panel.tileSize*10;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+        switch (subState) {
+            case 0: options_top(frameX, frameY); break;
+            case 1: break;
+            case 2: break;
+        }
+    }
+    public void options_top(int frameX, int frameY) {
+
+        int textX;
+        int textY;
+
+        // title
+        String text = "Options";
+        textX = getXforCenteredText(text);
+        textY = frameY + panel.tileSize;
+        g2.drawString(text, textX, textY);
+
+
+        // music
+        textX = frameX + panel.tileSize;
+        textY += panel.tileSize*(1.5);
+        g2.drawString("Music", textX, textY);
+        if(commandNum == 0) {
+            g2.drawString(">", textX-25, textY);
+        }
+
+        // SE
+        textY += panel.tileSize;
+        g2.drawString("SE", textX, textY);
+        if(commandNum == 1) {
+            g2.drawString(">", textX-25, textY);
+        }
+
+        // controls
+        textY += panel.tileSize;
+        g2.drawString("Controls", textX, textY);
+        if(commandNum == 2) {
+            g2.drawString(">", textX-25, textY);
+        }
+
+        // end game
+        textY += panel.tileSize;
+        g2.drawString("End Game", textX, textY);
+        if(commandNum == 3) {
+            g2.drawString(">", textX-25, textY);
+        }
+
+        // Back
+        textY += panel.tileSize*(3.5);
+        g2.drawString("Back", textX, textY);
+        if(commandNum == 4) {
+            g2.drawString(">", textX-25, textY);
+        }
+
+        // music volume bar
+        textX = frameX + (int) (panel.tileSize*4.5);
+        textY = frameY + panel.tileSize*2;
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRect(textX, textY, 120, 30); // 120/5 = 24px (per change)
+        int volumeWidth = 24 * panel.music.volumeScale;
+         g2.fillRect(textX, textY, volumeWidth, 24);
+
+        // SE bar
+        textY += panel.tileSize;
+        g2.drawRect(textX, textY, 120, 30);
+        volumeWidth = 24 * panel.SE.volumeScale;
+        g2.fillRect(textX, textY, volumeWidth, 24);
 
     }
     public int getItemIndexOnSlot () {

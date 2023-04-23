@@ -43,9 +43,13 @@ public class keyHandler implements KeyListener
         else if(panel.gameState == panel.dialogueState) {
             dialogueState(code);
         }
-        // character state
+        // option state
         else if (panel.gameState == panel.characterState) {
-            characterState(code);
+            optionsState(code);
+        }
+        // character state
+        else if (panel.gameState == panel.optionsState) {
+            optionsState(code);
         }
     }
     public void titleState(int code) {
@@ -64,7 +68,6 @@ public class keyHandler implements KeyListener
         if (code == KeyEvent.VK_ENTER) {
             if(panel.ui.commandNum == 0) {
                 panel.gameState = panel.playState;
-                panel.stopMusic();
                 panel.playMusic(0);
             }
             if (panel.ui.commandNum == 1) {
@@ -99,6 +102,9 @@ public class keyHandler implements KeyListener
         }
         if(code == KeyEvent.VK_F){
             shotKeyPressed = true;
+        }
+        if(code == KeyEvent.VK_ESCAPE){
+            panel.gameState = panel.optionsState;
         }
         // debug
         if(code == KeyEvent.VK_T){
@@ -152,7 +158,61 @@ public class keyHandler implements KeyListener
             panel.player.selectItem();
         }
     }
+    public void optionsState(int code)
+    {
+        if(code == KeyEvent.VK_ESCAPE) {
+            panel.gameState = panel.playState;
+        }
+        if(code == KeyEvent.VK_ENTER) {
+            enterPressed = true;
+        }
 
+        int maxCommandNum = 0;
+        switch(panel.ui.subState) {
+            case 0: maxCommandNum = 4;
+        }
+        if(code == KeyEvent.VK_W) {
+            panel.ui.commandNum--;
+            panel.playSE(9);
+            if(panel.ui.commandNum < 0) {
+                panel.ui.commandNum = maxCommandNum;
+            }
+        }
+        if(code == KeyEvent.VK_S) {
+            panel.ui.commandNum++;
+            panel.playSE(9);
+            if(panel.ui.commandNum > maxCommandNum) {
+                panel.ui.commandNum = 0;
+            }
+        }
+        if (code == KeyEvent.VK_A) {
+            if(panel.ui.subState == 0) {
+                if(panel.ui.commandNum == 1 && panel.music.volumeScale > 0) {
+                    panel.music.volumeScale--;
+                    panel.music.checkVolume();
+                    panel.playSE(9);
+                }
+                if(panel.ui.commandNum == 2 && panel.SE.volumeScale > 0) {
+                    panel.SE.volumeScale--;
+                    panel.playSE(9);
+                }
+            }
+        }
+        if (code == KeyEvent.VK_D) {
+            if(panel.ui.subState == 0) {
+                if(panel.ui.commandNum == 1 && panel.music.volumeScale < 5) {
+                    panel.music.volumeScale++;
+                    panel.music.checkVolume();
+                    panel.playSE(9);
+                }
+            }
+            if(panel.ui.commandNum == 2 && panel.SE.volumeScale < 5) {
+                panel.SE.volumeScale++;
+                panel.playSE(9);
+            }
+        }
+        }
+    }
     @Override
     public void keyReleased(KeyEvent e)
     {
