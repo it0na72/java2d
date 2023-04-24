@@ -10,18 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ec0fdc5-11f2-4ba7-a0f6-322684aa6b7d" name="Changes" comment="changed resolution of the game">
-      <change afterPath="$PROJECT_DIR$/out/production/java 2d/entity/particle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java 2d/entity/entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/Sound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/UI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/keyHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java 2d/main/panel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/keyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/keyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/panel.java" afterDir="false" />
@@ -195,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682193616796</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="changed resolution of the game">
+      <created>1682288193471</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1682288193471</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

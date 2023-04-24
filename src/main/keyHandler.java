@@ -169,7 +169,8 @@ public class keyHandler implements KeyListener
 
         int maxCommandNum = 0;
         switch(panel.ui.subState) {
-            case 0: maxCommandNum = 4;
+            case 0: maxCommandNum = 4; break;
+            case 3: maxCommandNum = 1; break;
         }
         if(code == KeyEvent.VK_W) {
             panel.ui.commandNum--;
@@ -187,9 +188,9 @@ public class keyHandler implements KeyListener
         }
         if (code == KeyEvent.VK_A) {
             if(panel.ui.subState == 0) {
-                if(panel.ui.commandNum == 1 && panel.music.volumeScale > 0) {
-                    panel.music.volumeScale--;
-                    panel.music.checkVolume();
+                if(panel.ui.commandNum == 1 && panel.sound.volumeScale > 0) {
+                    panel.sound.volumeScale--;
+                    panel.sound.checkVolume();
                     panel.playSE(9);
                 }
                 if(panel.ui.commandNum == 2 && panel.SE.volumeScale > 0) {
@@ -200,9 +201,9 @@ public class keyHandler implements KeyListener
         }
         if (code == KeyEvent.VK_D) {
             if(panel.ui.subState == 0) {
-                if(panel.ui.commandNum == 1 && panel.music.volumeScale < 5) {
-                    panel.music.volumeScale++;
-                    panel.music.checkVolume();
+                if(panel.ui.commandNum == 1 && panel.sound.volumeScale < 5) {
+                    panel.sound.volumeScale++;
+                    panel.sound.checkVolume();
                     panel.playSE(9);
                 }
             }
@@ -211,8 +212,8 @@ public class keyHandler implements KeyListener
                 panel.playSE(9);
             }
         }
-        }
     }
+
     @Override
     public void keyReleased(KeyEvent e)
     {

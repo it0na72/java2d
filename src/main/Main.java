@@ -1,7 +1,4 @@
 package main;
-
-import main.panel;
-
 import javax.swing.*;
 
 public class Main

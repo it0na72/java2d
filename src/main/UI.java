@@ -436,7 +436,8 @@ public class UI
         switch (subState) {
             case 0: options_top(frameX, frameY); break;
             case 1: break;
-            case 2: break;
+            case 2: options_control(frameX, frameY); break;
+            case 3: options_endGameConfirmation(frameX, frameY); break;
         }
     }
     public void options_top(int frameX, int frameY) {
@@ -471,6 +472,10 @@ public class UI
         g2.drawString("Controls", textX, textY);
         if(commandNum == 2) {
             g2.drawString(">", textX-25, textY);
+            if(panel.keyH.enterPressed == true) {
+                subState = 2;
+                commandNum = 0;
+            }
         }
 
         // end game
@@ -478,6 +483,10 @@ public class UI
         g2.drawString("End Game", textX, textY);
         if(commandNum == 3) {
             g2.drawString(">", textX-25, textY);
+            if(panel.keyH.enterPressed == true) {
+                subState = 3;
+                commandNum = 0;
+            }
         }
 
         // Back
@@ -485,6 +494,10 @@ public class UI
         g2.drawString("Back", textX, textY);
         if(commandNum == 4) {
             g2.drawString(">", textX-25, textY);
+            if(panel.keyH.enterPressed == true) {
+                panel.gameState = panel.playState;
+                commandNum = 0;
+            }
         }
 
         // music volume bar
@@ -492,8 +505,8 @@ public class UI
         textY = frameY + panel.tileSize*2;
         g2.setStroke(new BasicStroke(3));
         g2.drawRect(textX, textY, 120, 30); // 120/5 = 24px (per change)
-        int volumeWidth = 24 * panel.music.volumeScale;
-         g2.fillRect(textX, textY, volumeWidth, 24);
+        int volumeWidth = 24 * panel.sound.volumeScale;
+        g2.fillRect(textX, textY, volumeWidth, 24);
 
         // SE bar
         textY += panel.tileSize;
@@ -501,6 +514,85 @@ public class UI
         volumeWidth = 24 * panel.SE.volumeScale;
         g2.fillRect(textX, textY, volumeWidth, 24);
 
+    }
+
+    public void options_control(int frameX, int frameY) {
+        int textX;
+        int textY;
+
+        // title
+        String text = "Controls";
+        textX = getXforCenteredText(text);
+        textY = frameY + panel.tileSize;
+        g2.drawString(text, textX, textY);
+
+        textX = frameX + panel.tileSize;
+        textY += panel.tileSize;
+        g2.drawString("Move", textX, textY); textY += panel.tileSize;
+        g2.drawString("Confirm/Attack", textX, textY); textY += panel.tileSize;
+        g2.drawString("Shoot/Cast", textX, textY); textY += panel.tileSize;
+        g2.drawString("Character Screen", textX, textY); textY += panel.tileSize;
+        g2.drawString("Pause", textX, textY); textY += panel.tileSize;
+        g2.drawString("Options", textX, textY); textY += panel.tileSize;
+
+        textX = frameX * panel.tileSize*6;
+        textY = frameY * panel.tileSize*2;
+        g2.drawString("WASD", textX, textY); textY += panel.tileSize;
+        g2.drawString("ENTER", textX, textY); textY += panel.tileSize;
+        g2.drawString("F", textX, textY); textY += panel.tileSize;
+        g2.drawString("C", textX, textY); textY += panel.tileSize;
+        g2.drawString("P", textX, textY); textY += panel.tileSize;
+        g2.drawString("ESC", textX, textY); textY += panel.tileSize;
+
+        // BACK BUTTON FOR CONTROL MENU
+        textX = frameX * panel.tileSize;
+        textY = frameY * panel.tileSize*9;
+        g2.drawString("Back", textX, textY);
+        if(commandNum == 0) {
+            g2.drawString(">", textX-25, textY);
+            if(panel.keyH.enterPressed == true) {
+                subState = 0;
+                commandNum = 3;
+            }
+        }
+    }
+    public void options_endGameConfirmation(int frameX, int frameY) {
+
+        int textX = frameX + panel.tileSize;
+        int textY = frameY + panel.tileSize*3;
+
+        currentDialogue = "Quit the game and \nreturn to the title screen?";
+
+        for(String line: currentDialogue.split("\n")) {
+            g2.drawString(line, textX, textY);
+            textY += 40;
+        }
+
+        // YES
+        String text = "Yes";
+        textX = getXforCenteredText(text);
+        textY += panel.tileSize*3;
+        g2.drawString(text, textX, textY);
+        if(commandNum == 0) {
+            g2.drawString(">", textX - 25, textY);
+            if(panel.keyH.enterPressed == true) {
+                subState = 0;
+                panel.gameState = panel.titleState;
+            }
+        }
+
+        // NO
+        text = "No";
+        textX = getXforCenteredText(text);
+        textY += panel.tileSize;
+        g2.drawString(text, textX, textY);
+        if(commandNum == 1) {
+            g2.drawString(">", textX - 25, textY);
+            if(panel.keyH.enterPressed == true) {
+                subState = 0;
+                commandNum = 4;
+            }
+        }
     }
     public int getItemIndexOnSlot () {
         int itemIndex = slotCol + (slotRow*5);

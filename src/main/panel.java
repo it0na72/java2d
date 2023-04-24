@@ -77,7 +77,7 @@ public class panel extends JPanel implements Runnable
         aSetter.setNPC();
         aSetter.setMonster();
         aSetter.setInteractiveTile();
-//        playMusic(0);
+        playMusic(0);
         gameState = titleState;
     }
 
