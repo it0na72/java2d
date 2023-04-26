@@ -1,22 +1,30 @@
 package object;
-import entity.entity;
 
-public class OBJ_Heart extends entity
-{
-    public OBJ_Heart(main.panel panel) {
-        super(panel);
+import entity.Entity;
+import main.GamePanel;
 
+public class OBJ_Heart extends Entity {
+    GamePanel gp;
+    public static final String objName = "Heart";
+
+    public OBJ_Heart(GamePanel gp)
+    {
+        super(gp);
+        this.gp = gp;
         type = type_pickupOnly;
-        name = "Heart";
+        name = objName;
         value = 2;
-        down1 = setup("res/objects/heart_full", panel.tileSize, panel.tileSize);
-        image = setup("res/objects/heart_full", panel.tileSize, panel.tileSize);
-        image2 = setup("res/objects/heart_half", panel.tileSize, panel.tileSize);
-        image3 = setup("res/objects/heart_blank", panel.tileSize, panel.tileSize);
+        down1  = setup("/objects/heart_full",gp.tileSize,gp.tileSize); //Entity's draw method will draw it.
+        image = setup("/objects/heart_full",gp.tileSize,gp.tileSize);
+        image2 = setup("/objects/heart_half",gp.tileSize,gp.tileSize);
+        image3 = setup("/objects/heart_blank",gp.tileSize,gp.tileSize);
+        price = 175;
     }
-    public void use(entity entity) {
-        panel.playSE(2);
-        panel.ui.addMessage("Life +" + value);
+    public boolean use(Entity entity)
+    {
+        gp.playSE(2);
+        gp.ui.addMessage("Life +" + value);
         entity.life += value;
+        return true;
     }
 }

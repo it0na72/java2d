@@ -1,28 +1,37 @@
 package object;
-import entity.entity;
-import main.panel;
 
-public class OBJ_Potion_Red extends entity
-{
-    main.panel panel;
+import entity.Entity;
+import main.GamePanel;
 
-    public OBJ_Potion_Red(main.panel panel)
-    {
-        super(panel);
+public class OBJ_Potion_Red extends Entity {
 
-        this.panel = panel;
+    GamePanel gp;
+    public static final String objName = "Red Potion";
+
+    public OBJ_Potion_Red(GamePanel gp) {
+        super(gp);
+
+        this.gp = gp;
 
         type = type_consumable;
-        name = "Red Potion";
+        name = objName;
         value = 5;
-        down1 = setup("res/objects/potion_red", panel.tileSize, panel.tileSize);
-        description = "[" + name + "]\nHeals you by " + value + ".";
+        down1 = setup("/objects/potion_red", gp.tileSize, gp.tileSize);
+        description = "[" + name + "]\nHeals your life by " + value + ".";
+        price = 50;
+        stackable = true;
+
+        setDialogue();
     }
-    public void use(entity entity)
+    public void setDialogue()
     {
-        panel.gameState = panel.dialogueState;
-        panel.ui.currentDialogue = "You drank a " + name + "!\n" + "Your life has been restored by " + value + ".";
+        dialogues[0][0] = "You drink the " + name + "!\n" + "Your life has been recovered by " + value + ".";
+    }
+    public boolean use(Entity entity)
+    {
+        startDialogue(this,0);
         entity.life += value;
-        panel.playSE(2);
+        gp.playSE(2);
+        return true;
     }
 }

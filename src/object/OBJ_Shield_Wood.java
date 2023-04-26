@@ -1,16 +1,20 @@
 package object;
-import entity.entity;
 
-public class OBJ_Shield_Wood extends entity
-{
-    public OBJ_Shield_Wood(main.panel panel)
-    {
-        super(panel);
+import entity.Entity;
+import main.GamePanel;
+
+public class OBJ_Shield_Wood extends Entity {
+
+    public static final String objName = "Wood Shield";
+
+    public OBJ_Shield_Wood(GamePanel gp) {
+        super(gp);
 
         type = type_shield;
-        name = "Wood Shield";
-        down1 = setup("res/objects/shield_wood", panel.tileSize, panel.tileSize);
+        name = objName;
+        down1 = setup("/objects/shield_wood",gp.tileSize,gp.tileSize);
         defenseValue = 1;
-        description = "[" + name + "]\nA simple wooden shield.";
+        description = "[" + name + "]\nMade by wood.";
+        price = 30;
     }
 }

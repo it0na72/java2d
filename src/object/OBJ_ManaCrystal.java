@@ -1,26 +1,32 @@
 package object;
-import entity.entity;
-import main.panel;
 
-public class OBJ_ManaCrystal extends entity
-{
-    panel panel;
+import entity.Entity;
+import main.GamePanel;
 
-    public OBJ_ManaCrystal(main.panel panel)
+public class OBJ_ManaCrystal extends Entity {
+
+    GamePanel gp;
+    public static final String objName = "Mana Crystal";
+
+    public OBJ_ManaCrystal(GamePanel gp)
     {
-        super(panel);
-        this.panel = panel;
+        super(gp);
+
+        this.gp = gp;
 
         type = type_pickupOnly;
-        name = "Mana Crystal";
+        name = objName;
         value = 1;
-        down1 = setup("res/objects/manacrystal_full", panel.tileSize, panel.tileSize);
-        image = setup("res/objects/manacrystal_full", panel.tileSize, panel.tileSize);
-        image2 = setup("res/objects/manacrystal_blank", panel.tileSize, panel.tileSize);
+        down1 = setup("/objects/manacrystal_full", gp.tileSize,gp.tileSize);
+        image = setup("/objects/manacrystal_full", gp.tileSize,gp.tileSize);
+        image2 = setup("/objects/manacrystal_blank", gp.tileSize,gp.tileSize);
+        price = 105;
     }
-    public void use(entity entity) {
-        panel.playSE(2);
-        panel.ui.addMessage("Mana +" + value);
+    public boolean use(Entity entity)
+    {
+        gp.playSE(2);
+        gp.ui.addMessage("Mana +" + value);
         entity.mana += value;
+        return true;
     }
 }

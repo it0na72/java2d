@@ -1,24 +1,38 @@
 package main;
+
 import javax.swing.*;
+import java.awt.*;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        JFrame window = new JFrame();
-        panel panel = new panel ();
+public class Main {
+
+    public static JFrame window;
+
+    public static void main(String[] args) {
+        window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
-        window.setTitle("2D Adventure");
+        window.setResizable(false); // Cant Resize
+        window.setTitle("2D Adventure\n"); // Window Name
+        new Main().setIcon();
+        GamePanel gamePanel = new GamePanel();
+        window.add(gamePanel);
 
-        window.add(panel);
+        gamePanel.config.loadConfig();
+        if(gamePanel.fullScreenOn == true)
+        {
+            window.setUndecorated(true);
+        }
 
-        window.pack();
+        window.pack(); // Resizes to preferred size and prevents overflow.
 
-        window.setLocationRelativeTo(null);
+        window.setLocationRelativeTo(null); // Starts center of screen
         window.setVisible(true);
 
-        panel.setupGame();
-        panel.startGameThread();
+        gamePanel.setupGame(); // Setting up the game before starts
+        gamePanel.startGameThread();
+    }
+    public void setIcon()
+    {
+        ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("player/boy_down_1.png"));
+        window.setIconImage(icon.getImage());
     }
 }

@@ -1,95 +1,171 @@
 package main;
 
-import java.awt.*;
+import data.Progress;
+import entity.Entity;
 
-public class EventHandler
-{
-    panel panel;
-    EventRect eventRect[][];
+public class EventHandler{
+    GamePanel gp;
+    EventRect eventRect[][][];
+    Entity eventMaster;
 
     int previousEventX, previousEventY;
     boolean canTouchEvent = true;
+    int tempMap, tempCol, tempRow;
 
-    public EventHandler(panel panel) {
-        this.panel = panel;
 
-        eventRect = new EventRect[panel.maxWorldColumn][panel.maxWorldRow];
+    public EventHandler(GamePanel gp)
+    {
+        //Set event's interact 2x2 pixels
+        this.gp = gp;
 
+        eventMaster = new Entity(gp);
+
+        eventRect = new EventRect[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
+
+        int map = 0;
         int col = 0;
         int row = 0;
-        while(col < panel.maxWorldColumn && row < panel.maxWorldRow) {
-            eventRect[col][row] = new EventRect();
-            eventRect[col][row].x = 23;
-            eventRect[col][row].y = 23;
-            eventRect[col][row].width = 2;
-            eventRect[col][row].height = 2;
-            eventRect[col][row].eventRectDefaultX = eventRect[col][row].x;
-            eventRect[col][row].eventRectDefaultY = eventRect[col][row].y;
+        while(map < gp.maxMap && col < gp.maxWorldCol && row < gp.maxWorldRow)
+        {
+            eventRect[map][col][row] = new EventRect();
+            eventRect[map][col][row].x = 23;
+            eventRect[map][col][row].y = 23;
+            eventRect[map][col][row].width = 2;
+            eventRect[map][col][row].height = 2;
+            eventRect[map][col][row].eventRectDefaultX = eventRect[map][col][row].x;
+            eventRect[map][col][row].eventRectDefaultY = eventRect[map][col][row].y;
 
             col++;
-            if(col == panel.maxWorldColumn) {
+            if(col == gp.maxWorldCol)
+            {
                 col = 0;
                 row++;
+
+                if(row == gp.maxWorldRow)
+                {
+                    row = 0;
+                    map++; // create eventRectangles for each map
+                }
             }
         }
+        setDialogue();
     }
+    public void setDialogue()
+    {
+        eventMaster.dialogues[0][0] = "You fall into a pit!";
 
-    public void checkEvent() {
-
-        // check if the player character is more than 1 tile away from the last event
-        int xDistance = Math.abs(panel.player.worldX - previousEventX); // math returns absolute values
-        int yDistance = Math.abs(panel.player.worldY - previousEventY);
-        int distance = Math.max(xDistance, yDistance);
-        if(distance > panel.tileSize) {
+        eventMaster.dialogues[1][0] = "You drank some water.\nYour life and mana has been recovered.\n"+ "(The progress has been saved)";
+        eventMaster.dialogues[1][1] = "Frick, this is some good water.";
+    }
+    public void checkEvent()
+    {
+        //Check if the player character is more than 1 tile away from the last event
+        int xDistance = Math.abs(gp.player.worldX - previousEventX);  //pure distance
+        int yDistance = Math.abs(gp.player.worldY - previousEventY);
+        int distance = Math.max(xDistance, yDistance);                //returns greater value
+        if(distance > gp.tileSize)
+        {
             canTouchEvent = true;
         }
-            if(canTouchEvent == true) {
-                if(hit(27, 16, "right") == true) {damagePit (27, 16, panel.dialogueState);} // damage event
-                if(hit(23, 12, "up") == true) {healingPool (23, 12, panel.dialogueState);}
-            }
-    }
-    public boolean hit(int col, int row, String reqDirection) {
-        boolean hit = false;
 
-        panel.player.solidArea.x = panel.player.worldX + panel.player.solidArea.x;
-        panel.player.solidArea.y = panel.player.worldY + panel.player.solidArea.y;
-        eventRect[col][row].x = col*panel.tileSize + eventRect[col][row].x;
-        eventRect[col][row].y = row*panel.tileSize + eventRect[col][row].y;
+        if(canTouchEvent == true)
+        {
+            if(hit(0,23,12, "up") == true) {healingPool(gp.dialogueState);}
+            else if(hit(0,27,16, "right") == true) {damagePit(gp.dialogueState);}
+            else if(hit(0,10,39, "any") == true) {teleport(1,12,13,gp.indoor);} //to merchant's house
+            else if(hit(1,12,13, "any") == true) {teleport(0,10,39,gp.outside);} //to outside
+            else if(hit(1,12,9, "up") == true) {speak(gp.npc[1][0]);} //merchant
 
-        if(panel.player.solidArea.intersects(eventRect[col][row]) && !eventRect[col][row].eventDone) {
-            if(panel.player.direction.equals(reqDirection) || reqDirection.contentEquals("any")) {
-                hit = true;
+            else if(hit(0,12,9, "any") == true) {teleport(2,9,41,gp.dungeon);} //to the dungeon
+            else if(hit(2,9,41, "any") == true) {teleport(0,12,9,gp.outside);} //to outside
+            else if(hit(2,8,7, "any") == true) {teleport(3,26,41,gp.dungeon);} //to B2
+            else if(hit(3,26,41, "any") == true) {teleport(2,8,7,gp.dungeon);} //to B1
+            else if(hit(3,25,27, "any") == true) {skeletonLord();} //BOSS
 
-                previousEventX = panel.player.worldX;
-                previousEventY = panel.player.worldY;
-            }
         }
 
-        panel.player.solidArea.x = panel.player.solidAreaDefaultX;
-        panel.player.solidArea.y = panel.player.solidAreaDefaultY;
-        eventRect[col][row].x = eventRect[col][row].eventRectDefaultX;
-        eventRect[col][row].y = eventRect[col][row].eventRectDefaultY;
+    }
+    public boolean hit(int map, int col, int row, String reqDirection)
+    {
+        boolean hit = false;
+        if(map == gp.currentMap)
+        {
+            //Getting player's current solidArea positions
+            gp.player.solidArea.x = gp.player.worldX + gp.player.solidArea.x;
+            gp.player.solidArea.y = gp.player.worldY + gp.player.solidArea.y;
+            //Getting eventRect's current solidArea positions
+            eventRect[map][col][row].x = col * gp.tileSize + eventRect[map][col][row].x;
+            eventRect[map][col][row].y = row * gp.tileSize + eventRect[map][col][row].y;
+            //Checking if player's solidArea is colliding with eventRect's solidArea
+            if(gp.player.solidArea.intersects(eventRect[map][col][row]) && !eventRect[map][col][row].eventDone)
+            {
+                if(gp.player.direction.contentEquals(reqDirection) || reqDirection.equals("any"))
+                {
+                    hit = true;
 
+                    previousEventX = gp.player.worldX;
+                    previousEventY = gp.player.worldY;
+                }
+            }
+            //RESET
+            gp.player.solidArea.x = gp.player.solidAreaDefaultX;
+            gp.player.solidArea.y = gp.player.solidAreaDefaultY;
+            eventRect[map][col][row].x = eventRect[map][col][row].eventRectDefaultX;
+            eventRect[map][col][row].y = eventRect[map][col][row].eventRectDefaultY;
+
+        }
         return hit;
     }
-    public void damagePit(int col, int row, int gameState) {
-        panel.gameState = gameState;
-        panel.playSE(6);
-        panel.ui.currentDialogue = "You fell into a pit!";
-        panel.player.life -= 1;
-//        eventRect[col][row].eventDone = true;
+    public void teleport(int map, int col, int row, int area)
+    {
+        gp.gameState = gp.transitionState;
+        gp.nextArea = area;
+        tempMap = map;
+        tempCol = col;
+        tempRow = row;
+        //DRAW TRANSITION IN UI
         canTouchEvent = false;
+        gp.playSE(13);
     }
-    public void healingPool (int col, int row, int gameState) {
-        if (panel.keyH.enterPressed == true) {
-            panel.gameState = gameState;
-            panel.player.attackCanceled = true;
-            panel.playSE(2);
-            panel.ui.currentDialogue = "You drank some water. \nYou feel regenerated and you got some \nhealth & mana back.";
-            panel.player.life = panel.player.maxLife;
-            panel.player.mana = panel.player.maxMana;
-            panel.aSetter.setMonster();
-
+    public void damagePit(int gameState)
+    {
+        gp.gameState = gameState;
+        gp.playSE(6);
+        eventMaster.startDialogue(eventMaster, 0);
+        gp.player.life -= 2;
+        canTouchEvent = false;
+        //eventRect[col][row].eventDone = true;
+    }
+    public void healingPool(int gameState)
+    {
+        if(gp.keyH.enterPressed == true)
+        {
+            gp.gameState = gameState;
+            gp.player.attackCanceled = true;
+            gp.playSE(2);
+            eventMaster.startDialogue(eventMaster,1);
+            gp.player.life = gp.player.maxLife;
+            gp.player.mana = gp.player.maxMana;
+            //when you rest at the healing pool monsters will respawn
+            gp.aSetter.setMonster();
+            gp.saveLoad.save();
+        }
+    }
+    public void speak(Entity entity)
+    {
+        if(gp.keyH.enterPressed == true)
+        {
+            gp.gameState = gp.dialogueState;
+            gp.player.attackCanceled = true;
+            entity.speak();
+        }
+    }
+    public void skeletonLord()
+    {
+        if(gp.bossBattleOn == false && Progress.skeletonLordDefeated == false)
+        {
+            gp.gameState = gp.cutsceneState;
+            gp.csManager.sceneNum = gp.csManager.skeletonLord;
         }
     }
 }
