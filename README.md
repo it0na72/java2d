@@ -88,7 +88,7 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 - [ ] Attack animation is slightly out of focus
 
 
-### Screenshots of the game:
+# Screenshots of the game:
 
 **Start Screen**
 
@@ -145,5 +145,5 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 > ![merchant](https://user-images.githubusercontent.com/56265972/234724159-8add2e09-4be7-47dc-90b0-61b1ad66ec73.png)
 
 
-### Special Thanks
-Thank you to RyiSnow for providing the world tiles and npc sprites, and Game Endeavor for the character sprites.
+# Special Thanks
+Thank you to RyiSnow for providing the world tiles and npc sprites, and Game Endeavor for the character sprites. This wouldn't have been possible without their support.
