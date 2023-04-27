@@ -6,13 +6,14 @@ in the bootcamp, plus a couple more things I managed to learn on my own. This is
 ### Table of contents:
 - How to Install
 - How to Play
+- Game Items/Techniques
 - What I have learned with this project
 - Future plans 
 - Current bugs
 - Screenshots of the game
 	
 ### How to Install: 
-- You can find the latest release of the game by downloading the game [**HERE**](https://drive.google.com/file/d/1QU1nY_8M9cP4EFEeNhR0vyUOah9SNqin/view?usp=sharing). You will need to have JDK installed in your system.
+- You can find the latest release of the game by downloading the game [**HERE**](https://drive.google.com/file/d/13Wdrt1MRlPjsFQGan15Z00OZBoIKymbJ/view?usp=sharing). You will need to have JDK installed in your system.
 	
 ### How to Play:
 - Controls
@@ -24,6 +25,28 @@ in the bootcamp, plus a couple more things I managed to learn on my own. This is
 	- Map - **M**
 	- Minimap - **X**
 	- Inventory - **C**
+
+
+### Game Items/Techniques
+Here are some important features and mechanics to help you navigate through your adventure:
+1. **Guard:** Protect yourself from enemy attacks by blocking half the damage.
+
+2. **Parry:** With precise timing, you can parry an enemy attack and gain a critical hit chance for one second, which doubles your damage output.
+
+3. **Ninja:** As a skilled ninja, you can use your weapon to cut through incoming projectiles. However, timing is crucial in this technique.
+
+4. **Survivor:** Your surroundings can be destroyed to aid in your battle. Choose your weapons wisely to maximize your destruction potential.
+
+5. **Healing Pool:** Recover your life and mana by taking a dip in a nearby pool, but beware that monsters will respawn upon your return.
+
+6. **Coins:** Visit the merchant and purchase stronger items to give yourself an edge in battle.
+
+7. **Tent:** Rest and replenish your energy by sleeping until the next day.
+
+8. **Lantern:** When the sun sets, the importance of your lantern becomes apparent. Keep it handy to navigate through the darkness.
+
+
+The goal of the game? Solve the **dungeon puzzle**, kill the **final boss** and get the **treasure**. 
 	
 	
 ### What I have learned with this project:
@@ -54,8 +77,8 @@ in the bootcamp, plus a couple more things I managed to learn on my own. This is
 ### Future plans:
 - [x] Completed ~~This game is still being updated on a regular basis. I have a lot of other features I would love to include, including different maps,
 different classes (fighter, mage, archer, etc), different monsters, different songs depending on the monster you're fighting, and even
-different dimensions, environment interaction (cutting trees with axe), In-game Menu and different maps (map transitions). However, all of these are not my current priority. ~~
-- [ ] Increasing the map and adding more different monsters
+different dimensions, environment interaction (cutting trees with axe), In-game Menu and different maps (map transitions). However, all of these are not my current priority.~~
+- [ ] Increasing the map and add different monsters
 
 ### Current bugs (TBC):
 - [x] FIXED ~~There is no sound effects or music in the game yet. I added all the sound files but they are still not working. Will try to fix this as soon as possible~~
