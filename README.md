@@ -13,7 +13,7 @@ in the bootcamp, plus a couple more things I managed to learn on my own. This is
 - Screenshots of the game
 	
 ### How to Install: 
-- You can find the latest release of the game by downloading the game [**HERE**](https://drive.google.com/file/d/13Wdrt1MRlPjsFQGan15Z00OZBoIKymbJ/view?usp=sharing). You will need to have JDK installed in your system.
+- You can find the latest release of the game by downloading the game [**HERE**](https://drive.google.com/file/d/13Wdrt1MRlPjsFQGan15Z00OZBoIKymbJ/view?usp=sharing). You will need to have [**JDK installed in your system**](https://www.oracle.com/uk/java/technologies/downloads/).
 	
 ### How to Play:
 - Controls
