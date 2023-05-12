@@ -85,7 +85,8 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 - [x] FIXED ~~Healing fountain location is slightly bugged. You need to be in the EXACT tile for it to work~~
 - [x] FIXED ~~If you spam the healing fountain, you will get more health than you currently have (eg: if you have maximum health and you use the healing fountain, you get 3 extra hearts on top of that)~~
 - [x] FIXED ~~Monsters deal damage when they're in their dying animation~~
-- [ ] Attack animation is slightly out of focus
+- [ ] Attack animation is slightly out of focus 
+- [ ] Attack range is slightly out of place
 
 
 # Screenshots of the game:
