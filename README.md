@@ -79,6 +79,7 @@ The goal of the game? Solve the **dungeon puzzle**, kill the **final boss** and 
 different classes (fighter, mage, archer, etc), different monsters, different songs depending on the monster you're fighting, and even
 different dimensions, environment interaction (cutting trees with axe), In-game Menu and different maps (map transitions). However, all of these are not my current priority.~~
 - [ ] Increasing the map and add different monsters
+- [ ] Possibly host the game online
 
 ### Current bugs (TBC):
 - [x] FIXED ~~There is no sound effects or music in the game yet. I added all the sound files but they are still not working. Will try to fix this as soon as possible~~
