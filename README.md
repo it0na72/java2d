@@ -1,6 +1,6 @@
-# Java 2D Adventure Game 
+# Adventure Time - A 2D Retro Game! 
 
-This is a Java 2D adventure game and also my final bootcamp project. The intention of this game is to demonstrate what I have learned 
+This is a 2D adventure game and also my final bootcamp project. The intention of this game is to demonstrate what I have learned 
 in the bootcamp, plus a couple more things I managed to learn on my own. This is not being updated anymore, however if anything comes to my mind, I will eventually add more monsters and even different maps. 
 
 ### Table of contents:
