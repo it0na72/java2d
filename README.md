@@ -81,6 +81,7 @@ different dimensions, environment interaction (cutting trees with axe), In-game 
 - [ ] Increasing the map and add different monsters
 - [ ] Possibly host the game online
 - [ ] Add different monsters
+- [ ] Give the boss a second phase (like souls games)
 
 ### Current bugs (TBC):
 - [x] FIXED ~~There is no sound effects or music in the game yet. I added all the sound files but they are still not working. Will try to fix this as soon as possible~~
