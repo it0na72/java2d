@@ -77,21 +77,21 @@ The goal of the game? Solve the **dungeon puzzle**, kill the **final boss** and 
 ### Future plans:
 - [x] Completed ~~This game is still being updated on a regular basis. I have a lot of other features I would love to include, including different maps,
 different classes (fighter, mage, archer, etc), different monsters, different songs depending on the monster you're fighting, and even
-different dimensions, environment interaction (cutting trees with axe), In-game Menu and different maps (map transitions). However, all of these are not my current priority.~~
-- [ ] Increasing the map and add different monsters
+different dimensions, environment interaction (cutting trees with an axe), In-game Menu and different maps (map transitions). However, all of these are not my current priority.~~
+- [ ] Increasing the map and adding different monsters
 - [ ] Possibly host the game online
 - [ ] Add different monsters
 - [ ] Give the boss a second phase (like souls games)
-- [ ] Add different classes with different character sprites 
+- [ ] Add different classes with different character sprites
+- [ ] Add different dimensions (like the nether in Minecraft)
 
 ### Current bugs (TBC):
-- [x] FIXED ~~There is no sound effects or music in the game yet. I added all the sound files but they are still not working. Will try to fix this as soon as possible~~
+- [x] FIXED ~~There are no sound effects or music in the game yet. I added all the sound files but they are still not working. Will try to fix this as soon as possible~~
 - [x] FIXED ~~Healing fountain location is slightly bugged. You need to be in the EXACT tile for it to work~~
 - [x] FIXED ~~If you spam the healing fountain, you will get more health than you currently have (eg: if you have maximum health and you use the healing fountain, you get 3 extra hearts on top of that)~~
 - [x] FIXED ~~Monsters deal damage when they're in their dying animation~~
 - [ ] Attack animation is slightly out of focus 
 - [ ] Attack range is slightly out of place
-
 
 # Screenshots of the game:
 
